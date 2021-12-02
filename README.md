@@ -1,1 +1,1 @@
-# YOLO (You Only Look Once) Implementation on Zynq7000
+# YOLO (You Only Look Once) on Zynq7000
