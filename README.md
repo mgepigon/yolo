@@ -1,2 +1,2 @@
-# YOLO (You Only Look Once) on Zynq7000
-This is an implementation of the image classifier YOLO on Snickerdoodle FPGA.
+# YOLOv2 on Zynq7000
+This is an implementation of the image classifier YOLOv2 on Snickerdoodle FPGA.  Model was not trained and is only feed-forward.
