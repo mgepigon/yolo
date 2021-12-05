@@ -1,0 +1,14 @@
+
+*** Running vivado
+    with args -log test_axis_data_fifo_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_axis_data_fifo_0_0.tcl
+
+
+
+****** Vivado v2021.1.1 (64-bit)
+  **** SW Build 3286242 on Wed Jul 28 13:10:47 MDT 2021
+  **** IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source test_axis_data_fifo_0_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP test_axis_data_fifo_0_0, cache-ID = f5db4e20eda51bd7.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  5 13:52:32 2021...

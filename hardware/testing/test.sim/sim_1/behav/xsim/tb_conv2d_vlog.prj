@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../test.gen/sources_1/bd/test/ipshared/80cc/hdl/verilog" --include "../../../../test.gen/sources_1/bd/test/ipshared/22b9/hdl/verilog" --include "../../../../test.gen/sources_1/bd/test/ipshared/ec67/hdl" --include "../../../../test.gen/sources_1/bd/test/ipshared/8713/hdl" --include "../../../../test.gen/sources_1/bd/test/ipshared/f42d/hdl" --include "D:/Programs/Xilinx/Vivado/2021.1/data/xilinx_vip/include" \
+"../../../../../conv2D.v" \
+
+sv xil_defaultlib  --include "../../../../test.gen/sources_1/bd/test/ipshared/80cc/hdl/verilog" --include "../../../../test.gen/sources_1/bd/test/ipshared/22b9/hdl/verilog" --include "../../../../test.gen/sources_1/bd/test/ipshared/ec67/hdl" --include "../../../../test.gen/sources_1/bd/test/ipshared/8713/hdl" --include "../../../../test.gen/sources_1/bd/test/ipshared/f42d/hdl" --include "D:/Programs/Xilinx/Vivado/2021.1/data/xilinx_vip/include" \
+"../../../../../tb_project.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

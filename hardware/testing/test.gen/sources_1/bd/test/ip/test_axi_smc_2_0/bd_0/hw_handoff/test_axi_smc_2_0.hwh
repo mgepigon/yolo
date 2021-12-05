@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Dec  4 19:47:21 2021" VIVADOVERSION="2021.1.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Dec  5 13:51:06 2021" VIVADOVERSION="2021.1.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="bd_806f" PACKAGE="clg400" SPEEDGRADE="-3"/>
 
@@ -72,6 +72,25 @@
         <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="aux_reset_in"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="O" LEFT="8" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="2" NAME="M02_AXI_awprot" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="8" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="2" NAME="M02_AXI_arprot" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef"/>
     <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="s00_entry_pipeline_s00_mmu_s_axi_awid">
       <CONNECTIONS>
         <CONNECTION INSTANCE="s00_entry_pipeline_s00_mmu" PORT="s_axi_awid"/>
@@ -638,6 +657,60 @@
         <PORTMAP LOGICAL="RREADY" PHYSICAL="M01_AXI_rready"/>
       </PORTMAPS>
     </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="__NOC__" DATAWIDTH="32" NAME="M02_AXI" TYPE="MASTER">
+      <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+      <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
+      <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
+      <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+      <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+      <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+      <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+      <PARAMETER NAME="HAS_PROT" VALUE="1"/>
+      <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+      <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+      <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+      <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+      <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+      <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+      <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+      <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
+      <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
+      <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+      <PARAMETER NAME="PHASE" VALUE="0.0"/>
+      <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
+      <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+      <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+      <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+      <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="AWADDR" PHYSICAL="M02_AXI_awaddr"/>
+        <PORTMAP LOGICAL="AWPROT" PHYSICAL="M02_AXI_awprot"/>
+        <PORTMAP LOGICAL="AWVALID" PHYSICAL="M02_AXI_awvalid"/>
+        <PORTMAP LOGICAL="AWREADY" PHYSICAL="M02_AXI_awready"/>
+        <PORTMAP LOGICAL="WDATA" PHYSICAL="M02_AXI_wdata"/>
+        <PORTMAP LOGICAL="WSTRB" PHYSICAL="M02_AXI_wstrb"/>
+        <PORTMAP LOGICAL="WVALID" PHYSICAL="M02_AXI_wvalid"/>
+        <PORTMAP LOGICAL="WREADY" PHYSICAL="M02_AXI_wready"/>
+        <PORTMAP LOGICAL="BRESP" PHYSICAL="M02_AXI_bresp"/>
+        <PORTMAP LOGICAL="BVALID" PHYSICAL="M02_AXI_bvalid"/>
+        <PORTMAP LOGICAL="BREADY" PHYSICAL="M02_AXI_bready"/>
+        <PORTMAP LOGICAL="ARADDR" PHYSICAL="M02_AXI_araddr"/>
+        <PORTMAP LOGICAL="ARPROT" PHYSICAL="M02_AXI_arprot"/>
+        <PORTMAP LOGICAL="ARVALID" PHYSICAL="M02_AXI_arvalid"/>
+        <PORTMAP LOGICAL="ARREADY" PHYSICAL="M02_AXI_arready"/>
+        <PORTMAP LOGICAL="RDATA" PHYSICAL="M02_AXI_rdata"/>
+        <PORTMAP LOGICAL="RRESP" PHYSICAL="M02_AXI_rresp"/>
+        <PORTMAP LOGICAL="RVALID" PHYSICAL="M02_AXI_rvalid"/>
+        <PORTMAP LOGICAL="RREADY" PHYSICAL="M02_AXI_rready"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
   </EXTERNALINTERFACES>
 
   <MODULES>
@@ -778,7 +851,7 @@
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="10"/>
         <PARAMETER NAME="C_M_PROTOCOL" VALUE="2"/>
         <PARAMETER NAME="C_HAS_LOCK" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_MSC" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MSC" VALUE="3"/>
         <PARAMETER NAME="C_SINGLE_ISSUING" VALUE="1"/>
         <PARAMETER NAME="C_M_LIMIT_READ_LENGTH" VALUE="0"/>
         <PARAMETER NAME="C_M_LIMIT_WRITE_LENGTH" VALUE="0"/>
@@ -810,7 +883,7 @@
         <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
         <PARAMETER NAME="HAS_BURST" VALUE="0"/>
         <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
-        <PARAMETER NAME="NUM_MSC" VALUE="2"/>
+        <PARAMETER NAME="NUM_MSC" VALUE="3"/>
         <PARAMETER NAME="READ_ACCEPTANCE" VALUE="32"/>
         <PARAMETER NAME="WRITE_ACCEPTANCE" VALUE="32"/>
         <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
@@ -1518,13 +1591,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="2"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -1549,9 +1622,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -1643,7 +1716,7 @@
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_ar_node_s_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_ar_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -1678,7 +1751,7 @@
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_ar_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_ar_node_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_ar_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_ar_payld"/>
           </CONNECTIONS>
@@ -1721,13 +1794,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="3"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -1752,9 +1825,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -1846,7 +1919,7 @@
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_aw_node_s_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_aw_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -1881,7 +1954,7 @@
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_aw_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_aw_node_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_aw_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_aw_payld"/>
           </CONNECTIONS>
@@ -2330,13 +2403,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="1"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -2361,9 +2434,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -2455,7 +2528,7 @@
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_w_node_s_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_w_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -2490,7 +2563,7 @@
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_w_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="54" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_w_node_m_sc_payld">
+        <PORT DIR="O" LEFT="55" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_sc2axi" PORT="s_sc_w_payld"/>
           </CONNECTIONS>
@@ -2535,11 +2608,11 @@
         <PARAMETER NAME="C_SC_ARUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="C_SC_AWUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="C_SC_BUSER_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_SSC_ROUTE_WIDTH" VALUE="3"/>
-        <PARAMETER NAME="C_AWPAYLD_WIDTH" VALUE="143"/>
-        <PARAMETER NAME="C_ARPAYLD_WIDTH" VALUE="143"/>
-        <PARAMETER NAME="C_WPAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_AWPAYLD_WIDTH" VALUE="144"/>
+        <PARAMETER NAME="C_ARPAYLD_WIDTH" VALUE="144"/>
+        <PARAMETER NAME="C_WPAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_RPAYLD_WIDTH" VALUE="54"/>
         <PARAMETER NAME="C_BPAYLD_WIDTH" VALUE="8"/>
         <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
@@ -2556,7 +2629,7 @@
         <PARAMETER NAME="SC_BUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="SC_WUSER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="SC_RUSER_BITS_PER_BYTE" VALUE="0"/>
-        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="SSC_ROUTE_WIDTH" VALUE="3"/>
         <PARAMETER NAME="Component_Name" VALUE="bd_806f_m00s2a_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
@@ -2637,7 +2710,7 @@
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="142" NAME="s_sc_ar_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_ar_node_m_sc_payld">
+        <PORT DIR="I" LEFT="143" NAME="s_sc_ar_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_ar_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -2662,7 +2735,7 @@
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="142" NAME="s_sc_aw_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_aw_node_m_sc_payld">
+        <PORT DIR="I" LEFT="143" NAME="s_sc_aw_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_aw_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -2687,7 +2760,7 @@
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_w_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_w_node_m_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_w_payld" RIGHT="0" SIGIS="undef" SIGNAME="m00_nodes_m00_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -3031,7 +3104,7 @@
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="10"/>
         <PARAMETER NAME="C_M_PROTOCOL" VALUE="2"/>
         <PARAMETER NAME="C_HAS_LOCK" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_MSC" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MSC" VALUE="3"/>
         <PARAMETER NAME="C_SINGLE_ISSUING" VALUE="1"/>
         <PARAMETER NAME="C_M_LIMIT_READ_LENGTH" VALUE="0"/>
         <PARAMETER NAME="C_M_LIMIT_WRITE_LENGTH" VALUE="0"/>
@@ -3063,7 +3136,7 @@
         <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
         <PARAMETER NAME="HAS_BURST" VALUE="0"/>
         <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
-        <PARAMETER NAME="NUM_MSC" VALUE="2"/>
+        <PARAMETER NAME="NUM_MSC" VALUE="3"/>
         <PARAMETER NAME="READ_ACCEPTANCE" VALUE="32"/>
         <PARAMETER NAME="WRITE_ACCEPTANCE" VALUE="32"/>
         <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
@@ -3771,13 +3844,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="2"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -3802,9 +3875,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -3896,7 +3969,7 @@
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -3931,7 +4004,7 @@
             <CONNECTION INSTANCE="m01_sc2axi" PORT="s_sc_ar_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m01_sc2axi" PORT="s_sc_ar_payld"/>
           </CONNECTIONS>
@@ -3974,13 +4047,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="3"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -4005,9 +4078,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -4099,7 +4172,7 @@
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -4134,7 +4207,7 @@
             <CONNECTION INSTANCE="m01_sc2axi" PORT="s_sc_aw_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m01_sc2axi" PORT="s_sc_aw_payld"/>
           </CONNECTIONS>
@@ -4583,13 +4656,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="1"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -4614,9 +4687,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -4708,7 +4781,7 @@
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -4743,7 +4816,7 @@
             <CONNECTION INSTANCE="m01_sc2axi" PORT="s_sc_w_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="54" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_m_sc_payld">
+        <PORT DIR="O" LEFT="55" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m01_sc2axi" PORT="s_sc_w_payld"/>
           </CONNECTIONS>
@@ -4788,11 +4861,11 @@
         <PARAMETER NAME="C_SC_ARUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="C_SC_AWUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="C_SC_BUSER_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_SSC_ROUTE_WIDTH" VALUE="3"/>
-        <PARAMETER NAME="C_AWPAYLD_WIDTH" VALUE="143"/>
-        <PARAMETER NAME="C_ARPAYLD_WIDTH" VALUE="143"/>
-        <PARAMETER NAME="C_WPAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_AWPAYLD_WIDTH" VALUE="144"/>
+        <PARAMETER NAME="C_ARPAYLD_WIDTH" VALUE="144"/>
+        <PARAMETER NAME="C_WPAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_RPAYLD_WIDTH" VALUE="54"/>
         <PARAMETER NAME="C_BPAYLD_WIDTH" VALUE="8"/>
         <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
@@ -4809,7 +4882,7 @@
         <PARAMETER NAME="SC_BUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="SC_WUSER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="SC_RUSER_BITS_PER_BYTE" VALUE="0"/>
-        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="SSC_ROUTE_WIDTH" VALUE="3"/>
         <PARAMETER NAME="Component_Name" VALUE="bd_806f_m01s2a_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
@@ -4890,7 +4963,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_ar_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="142" NAME="s_sc_ar_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_m_sc_payld">
+        <PORT DIR="I" LEFT="143" NAME="s_sc_ar_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m01_nodes_m01_ar_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -4915,7 +4988,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_aw_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="142" NAME="s_sc_aw_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_m_sc_payld">
+        <PORT DIR="I" LEFT="143" NAME="s_sc_aw_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m01_nodes_m01_aw_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -4940,7 +5013,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_w_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_w_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_m_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_w_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m01_nodes_m01_w_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -5275,11 +5348,11 @@
         <PARAMETER NAME="C_SC_ARUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="C_SC_AWUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="C_SC_BUSER_WIDTH" VALUE="0"/>
-        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_SSC_ROUTE_WIDTH" VALUE="3"/>
-        <PARAMETER NAME="C_AWPAYLD_WIDTH" VALUE="143"/>
-        <PARAMETER NAME="C_ARPAYLD_WIDTH" VALUE="143"/>
-        <PARAMETER NAME="C_WPAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_AWPAYLD_WIDTH" VALUE="144"/>
+        <PARAMETER NAME="C_ARPAYLD_WIDTH" VALUE="144"/>
+        <PARAMETER NAME="C_WPAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_RPAYLD_WIDTH" VALUE="54"/>
         <PARAMETER NAME="C_BPAYLD_WIDTH" VALUE="8"/>
         <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
@@ -5296,7 +5369,7 @@
         <PARAMETER NAME="SC_BUSER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="SC_WUSER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="SC_RUSER_BITS_PER_BYTE" VALUE="0"/>
-        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="SSC_ROUTE_WIDTH" VALUE="3"/>
         <PARAMETER NAME="Component_Name" VALUE="bd_806f_s00a2s_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
@@ -5377,7 +5450,7 @@
             <CONNECTION INSTANCE="s00_nodes_s00_ar_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="142" NAME="m_sc_ar_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_ar_payld">
+        <PORT DIR="O" LEFT="143" NAME="m_sc_ar_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_ar_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_nodes_s00_ar_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -5402,7 +5475,7 @@
             <CONNECTION INSTANCE="s00_nodes_s00_aw_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="142" NAME="m_sc_aw_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_aw_payld">
+        <PORT DIR="O" LEFT="143" NAME="m_sc_aw_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_aw_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_nodes_s00_aw_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -5427,7 +5500,7 @@
             <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="54" NAME="m_sc_w_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_w_payld">
+        <PORT DIR="O" LEFT="55" NAME="m_sc_w_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_w_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -5760,9 +5833,9 @@
         <PARAMETER NAME="C_SEG_SUPPORTS_WRITE_ARRAY" VALUE="0b11"/>
         <PARAMETER NAME="C_SEG_SECURE_READ_ARRAY" VALUE="0b00"/>
         <PARAMETER NAME="C_SEG_SECURE_WRITE_ARRAY" VALUE="0b00"/>
-        <PARAMETER NAME="C_NUM_MSC" VALUE="2"/>
-        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="4"/>
-        <PARAMETER NAME="C_MSC_ROUTE_ARRAY" VALUE="0b11011011"/>
+        <PARAMETER NAME="C_NUM_MSC" VALUE="3"/>
+        <PARAMETER NAME="C_MSC_ROUTE_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="C_MSC_ROUTE_ARRAY" VALUE="0b110011010110011"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="12"/>
         <PARAMETER NAME="C_RDATA_WIDTH" VALUE="32"/>
@@ -5788,8 +5861,8 @@
         <PARAMETER NAME="IS_CASCADED" VALUE="0"/>
         <PARAMETER NAME="ENABLE_PIPELINING" VALUE="0"/>
         <PARAMETER NAME="NUM_SEG" VALUE="2"/>
-        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="4"/>
-        <PARAMETER NAME="NUM_MSC" VALUE="2"/>
+        <PARAMETER NAME="MSC_ROUTE_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="NUM_MSC" VALUE="3"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="12"/>
         <PARAMETER NAME="RDATA_WIDTH" VALUE="32"/>
@@ -7600,9 +7673,9 @@
         <PARAMETER NAME="SEG255_SUPPORTS_WRITE" VALUE="1"/>
         <PARAMETER NAME="SEG255_SECURE_READ" VALUE="0"/>
         <PARAMETER NAME="SEG255_SECURE_WRITE" VALUE="0"/>
-        <PARAMETER NAME="MSC000_ROUTE" VALUE="0b1011"/>
-        <PARAMETER NAME="MSC001_ROUTE" VALUE="0b1101"/>
-        <PARAMETER NAME="MSC002_ROUTE" VALUE="0x1"/>
+        <PARAMETER NAME="MSC000_ROUTE" VALUE="0b10011"/>
+        <PARAMETER NAME="MSC001_ROUTE" VALUE="0b10101"/>
+        <PARAMETER NAME="MSC002_ROUTE" VALUE="0b11001"/>
         <PARAMETER NAME="MSC003_ROUTE" VALUE="0x1"/>
         <PARAMETER NAME="MSC004_ROUTE" VALUE="0x1"/>
         <PARAMETER NAME="MSC005_ROUTE" VALUE="0x1"/>
@@ -8445,9 +8518,9 @@
         <PARAMETER NAME="C_SEP_WDATA_WIDTH_ARRAY" VALUE="0x0000002000000020"/>
         <PARAMETER NAME="C_SEP_RDATA_WIDTH_ARRAY" VALUE="0x0000002000000020"/>
         <PARAMETER NAME="C_SEP_PROTOCOL_ARRAY" VALUE="0x0000000200000002"/>
-        <PARAMETER NAME="C_NUM_MSC" VALUE="2"/>
-        <PARAMETER NAME="C_MSC_WDATA_WIDTH_ARRAY" VALUE="0x0000002000000020"/>
-        <PARAMETER NAME="C_MSC_RDATA_WIDTH_ARRAY" VALUE="0x0000002000000020"/>
+        <PARAMETER NAME="C_NUM_MSC" VALUE="3"/>
+        <PARAMETER NAME="C_MSC_WDATA_WIDTH_ARRAY" VALUE="0x000000200000002000000020"/>
+        <PARAMETER NAME="C_MSC_RDATA_WIDTH_ARRAY" VALUE="0x000000200000002000000020"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_WDATA_WIDTH" VALUE="32"/>
@@ -8478,7 +8551,7 @@
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="RDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="WDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="NUM_MSC" VALUE="2"/>
+        <PARAMETER NAME="NUM_MSC" VALUE="3"/>
         <PARAMETER NAME="S_RUSER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="S_WUSER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -10351,7 +10424,7 @@
         <PARAMETER NAME="C_NUM_WRITE_THREADS" VALUE="1"/>
         <PARAMETER NAME="C_MEP_IDENTIFIER_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_MEP_IDENTIFIER" VALUE="3"/>
-        <PARAMETER NAME="C_SEP_ROUTE_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_SEP_ROUTE_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_RDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_WDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S_ID_WIDTH" VALUE="12"/>
@@ -10376,7 +10449,7 @@
         <PARAMETER NAME="M_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="WDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="RDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="SEP_ROUTE_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="SEP_ROUTE_WIDTH" VALUE="2"/>
         <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
         <PARAMETER NAME="READ_ACCEPTANCE" VALUE="32"/>
         <PARAMETER NAME="WRITE_ACCEPTANCE" VALUE="32"/>
@@ -10994,13 +11067,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="2"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -11025,9 +11098,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -11119,7 +11192,7 @@
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_ar_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_ar_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_ar_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_ar_payld"/>
           </CONNECTIONS>
@@ -11154,7 +11227,7 @@
             <CONNECTION INSTANCE="switchboards_ar_la_in_swbd" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_ar_node_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_ar_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_in_swbd" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -11197,13 +11270,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="3"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -11228,9 +11301,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -11322,7 +11395,7 @@
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_aw_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_aw_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_aw_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_aw_payld"/>
           </CONNECTIONS>
@@ -11357,7 +11430,7 @@
             <CONNECTION INSTANCE="switchboards_aw_la_in_swbd" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_aw_node_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_aw_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_in_swbd" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -11806,13 +11879,13 @@
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="1"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="512"/>
@@ -11837,9 +11910,9 @@
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="512"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -11931,7 +12004,7 @@
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_w_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_w_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_axi2sc_m_sc_w_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_axi2sc" PORT="m_sc_w_payld"/>
           </CONNECTIONS>
@@ -11966,7 +12039,7 @@
             <CONNECTION INSTANCE="switchboards_w_la_in_swbd" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="54" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_w_node_m_sc_payld">
+        <PORT DIR="O" LEFT="55" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_in_swbd" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -11998,7 +12071,7 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="K_MAX_INFO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
@@ -12013,7 +12086,7 @@
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="M00_S00_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S01_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S02_CONNECTIVITY" VALUE="1"/>
@@ -12295,7 +12368,7 @@
             <CONNECTION INSTANCE="s00_nodes_s00_ar_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_ar_node_m_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_ar_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_nodes_s00_ar_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -12325,7 +12398,7 @@
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_in_swbd_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_in_swbd_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -12358,22 +12431,22 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="K_MAX_INFO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_S_LATENCY" VALUE="0"/>
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MI" VALUE="3"/>
         <PARAMETER NAME="C_TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b11"/>
+        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b111"/>
         <PARAMETER NAME="S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="S_LATENCY" VALUE="0"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="M00_S00_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S01_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S02_CONNECTIVITY" VALUE="1"/>
@@ -12640,32 +12713,32 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aclken" POLARITY="ACTIVE_LOW" SIGIS="ce"/>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_ar_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
@@ -12673,7 +12746,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_ar_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="s_sc_send"/>
           </CONNECTIONS>
@@ -12681,7 +12754,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_ar_node" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="s_sc_req"/>
           </CONNECTIONS>
@@ -12689,7 +12762,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_ar_node" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="s_sc_info"/>
           </CONNECTIONS>
@@ -12697,7 +12770,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_ar_node" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="293" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_payld">
+        <PORT DIR="O" LEFT="443" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_ar_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_ar_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -12735,6 +12808,15 @@
             <PORTMAP LOGICAL="PAYLD" PHYSICAL="m_sc_payld"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="M02_SC" TYPE="MASTER" VLNV="xilinx.com:interface:sc:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="RECV" PHYSICAL="m_sc_recv"/>
+            <PORTMAP LOGICAL="SEND" PHYSICAL="m_sc_send"/>
+            <PORTMAP LOGICAL="REQ" PHYSICAL="m_sc_req"/>
+            <PORTMAP LOGICAL="INFO" PHYSICAL="m_sc_info"/>
+            <PORTMAP LOGICAL="PAYLD" PHYSICAL="m_sc_payld"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="6" FULLNAME="/switchboards/aw_la_in_swbd" HWVERSION="1.0" INSTANCE="switchboards_aw_la_in_swbd" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="sc_switchboard" VLNV="xilinx.com:ip:sc_switchboard:1.0">
@@ -12742,7 +12824,7 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="K_MAX_INFO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
@@ -12757,7 +12839,7 @@
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="M00_S00_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S01_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S02_CONNECTIVITY" VALUE="1"/>
@@ -13039,7 +13121,7 @@
             <CONNECTION INSTANCE="s00_nodes_s00_aw_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_aw_node_m_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_aw_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_nodes_s00_aw_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -13069,7 +13151,7 @@
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_in_swbd_m_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_in_swbd_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -13102,22 +13184,22 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="K_MAX_INFO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_S_LATENCY" VALUE="0"/>
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MI" VALUE="3"/>
         <PARAMETER NAME="C_TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b11"/>
+        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b111"/>
         <PARAMETER NAME="S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="S_LATENCY" VALUE="0"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="M00_S00_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S01_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S02_CONNECTIVITY" VALUE="1"/>
@@ -13384,32 +13466,32 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aclken" POLARITY="ACTIVE_LOW" SIGIS="ce"/>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_aw_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
@@ -13417,7 +13499,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_aw_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="s_sc_send"/>
           </CONNECTIONS>
@@ -13425,7 +13507,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_aw_node" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="s_sc_req"/>
           </CONNECTIONS>
@@ -13433,7 +13515,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_aw_node" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="s_sc_info"/>
           </CONNECTIONS>
@@ -13441,7 +13523,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_aw_node" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="293" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_payld">
+        <PORT DIR="O" LEFT="443" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_aw_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_aw_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -13471,6 +13553,15 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="switchboards_aw_la_out_swbd_M01_SC" NAME="M01_SC" TYPE="MASTER" VLNV="xilinx.com:interface:sc:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="RECV" PHYSICAL="m_sc_recv"/>
+            <PORTMAP LOGICAL="SEND" PHYSICAL="m_sc_send"/>
+            <PORTMAP LOGICAL="REQ" PHYSICAL="m_sc_req"/>
+            <PORTMAP LOGICAL="INFO" PHYSICAL="m_sc_info"/>
+            <PORTMAP LOGICAL="PAYLD" PHYSICAL="m_sc_payld"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="M02_SC" TYPE="MASTER" VLNV="xilinx.com:interface:sc:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="RECV" PHYSICAL="m_sc_recv"/>
             <PORTMAP LOGICAL="SEND" PHYSICAL="m_sc_send"/>
@@ -13851,14 +13942,14 @@
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_S_LATENCY" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_SI" VALUE="3"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_CONNECTIVITY" VALUE="&quot;11&quot;"/>
+        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b111"/>
         <PARAMETER NAME="S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="S_LATENCY" VALUE="0"/>
-        <PARAMETER NAME="NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="NUM_SI" VALUE="3"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
         <PARAMETER NAME="PAYLD_WIDTH" VALUE="10"/>
@@ -14128,7 +14219,7 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aclken" POLARITY="ACTIVE_LOW" SIGIS="ce"/>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_b_node" PORT="m_sc_send"/>
           </CONNECTIONS>
@@ -14136,7 +14227,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_b_node" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_b_node" PORT="m_sc_req"/>
           </CONNECTIONS>
@@ -14144,7 +14235,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_b_node" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_b_node" PORT="m_sc_info"/>
           </CONNECTIONS>
@@ -14152,7 +14243,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_b_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="19" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_payld">
+        <PORT DIR="I" LEFT="29" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_b_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -14160,7 +14251,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_b_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_b_node_m_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_b_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
@@ -14168,22 +14259,22 @@
             <CONNECTION INSTANCE="m01_nodes_m01_b_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_b_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_b_node" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_b_node" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_b_node" PORT="s_sc_info"/>
           </CONNECTIONS>
@@ -14224,6 +14315,16 @@
             <PORTMAP LOGICAL="RECV" PHYSICAL="s_sc_recv"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="S02_SC" TYPE="SLAVE" VLNV="xilinx.com:interface:sc:1.0">
+          <PARAMETER NAME="BRIDGES" VALUE="M00_SC:M01_SC:M02_SC:M03_SC:M04_SC:M05_SC:M06_SC:M07_SC:M08_SC:M09_SC:M10_SC:M11_SC:M12_SC:M13_SC:M14_SC:M15_SC"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="SEND" PHYSICAL="s_sc_send"/>
+            <PORTMAP LOGICAL="REQ" PHYSICAL="s_sc_req"/>
+            <PORTMAP LOGICAL="INFO" PHYSICAL="s_sc_info"/>
+            <PORTMAP LOGICAL="PAYLD" PHYSICAL="s_sc_payld"/>
+            <PORTMAP LOGICAL="RECV" PHYSICAL="s_sc_recv"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="13" FULLNAME="/switchboards/i_nodes/i_ar_node" HWVERSION="1.0" INSTANCE="switchboards_i_nodes_i_ar_node" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="sc_node" VLNV="xilinx.com:ip:sc_node:1.0">
@@ -14240,15 +14341,15 @@
         <PARAMETER NAME="C_ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="C_SYNCHRONIZATION_STAGES" VALUE="3"/>
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MI" VALUE="3"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="2"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
-        <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
+        <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x000000040000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -14268,14 +14369,14 @@
         <PARAMETER NAME="ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="3"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="CHANNEL" VALUE="2"/>
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -14367,7 +14468,7 @@
             <CONNECTION INSTANCE="switchboards_ar_la_in_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_in_swbd_m_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_in_swbd_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_in_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -14382,27 +14483,27 @@
             <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_ar_la_out_swbd_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_ar_la_out_swbd" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -14443,15 +14544,15 @@
         <PARAMETER NAME="C_ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="C_SYNCHRONIZATION_STAGES" VALUE="3"/>
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MI" VALUE="3"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="3"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
-        <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
+        <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x000000040000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="0"/>
@@ -14471,14 +14572,14 @@
         <PARAMETER NAME="ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="3"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="CHANNEL" VALUE="3"/>
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="147"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="148"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="0"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -14570,7 +14671,7 @@
             <CONNECTION INSTANCE="switchboards_aw_la_in_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="146" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_in_swbd_m_sc_payld">
+        <PORT DIR="I" LEFT="147" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_in_swbd_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_in_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -14585,27 +14686,27 @@
             <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="146" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_payld">
+        <PORT DIR="O" LEFT="147" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_aw_la_out_swbd_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_aw_la_out_swbd" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -14645,13 +14746,13 @@
         <PARAMETER NAME="C_FIFO_OUTPUT_REG" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="C_SYNCHRONIZATION_STAGES" VALUE="3"/>
-        <PARAMETER NAME="C_NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_SI" VALUE="3"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="4"/>
         <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="10"/>
-        <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
+        <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x000000040000000400000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
-        <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0x0000"/>
+        <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b000"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
         <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="3"/>
@@ -14673,7 +14774,7 @@
         <PARAMETER NAME="FIFO_OUTPUT_REG" VALUE="1"/>
         <PARAMETER NAME="ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="3"/>
-        <PARAMETER NAME="NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="NUM_SI" VALUE="3"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="CHANNEL" VALUE="4"/>
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
@@ -14753,22 +14854,22 @@
             <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_b_la_out_swbd" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_b_la_out_swbd" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_b_la_out_swbd" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_b_la_out_swbd_m_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_b_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
@@ -14848,13 +14949,13 @@
         <PARAMETER NAME="C_FIFO_OUTPUT_REG" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="C_SYNCHRONIZATION_STAGES" VALUE="3"/>
-        <PARAMETER NAME="C_NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_SI" VALUE="3"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="0"/>
         <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
-        <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
+        <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x000000040000000400000004"/>
         <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
-        <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0x0000"/>
+        <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b000"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
         <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="3"/>
@@ -14876,7 +14977,7 @@
         <PARAMETER NAME="FIFO_OUTPUT_REG" VALUE="1"/>
         <PARAMETER NAME="ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="3"/>
-        <PARAMETER NAME="NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="NUM_SI" VALUE="3"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="CHANNEL" VALUE="0"/>
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
@@ -14956,22 +15057,22 @@
             <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_r_la_out_swbd" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_r_la_out_swbd" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_r_la_out_swbd" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_r_la_out_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
@@ -15052,15 +15153,15 @@
         <PARAMETER NAME="C_ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="C_SYNCHRONIZATION_STAGES" VALUE="3"/>
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MI" VALUE="3"/>
         <PARAMETER NAME="C_CHANNEL" VALUE="1"/>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="C_S_NUM_BYTES_ARRAY" VALUE="0x00000004"/>
-        <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x0000000400000004"/>
+        <PARAMETER NAME="C_M_NUM_BYTES_ARRAY" VALUE="0x000000040000000400000004"/>
         <PARAMETER NAME="C_PRIORITY_ARB_ARRAY" VALUE="0b0"/>
         <PARAMETER NAME="C_USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="C_ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="C_ID_WIDTH" VALUE="2"/>
         <PARAMETER NAME="C_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_USER_WIDTH" VALUE="512"/>
@@ -15080,14 +15181,14 @@
         <PARAMETER NAME="ENABLE_PIPELINING" VALUE="0x01"/>
         <PARAMETER NAME="SYNCHRONIZATION_STAGES" VALUE="3"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="CHANNEL" VALUE="1"/>
         <PARAMETER NAME="USER_BITS_PER_BYTE" VALUE="0"/>
         <PARAMETER NAME="MAX_PAYLD_BYTES" VALUE="4"/>
         <PARAMETER NAME="ARBITER_MODE" VALUE="1"/>
-        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="SC_ROUTE_WIDTH" VALUE="5"/>
         <PARAMETER NAME="ID_WIDTH" VALUE="2"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="USER_WIDTH" VALUE="512"/>
         <PARAMETER NAME="S_PIPELINE" VALUE="0"/>
@@ -15179,7 +15280,7 @@
             <CONNECTION INSTANCE="switchboards_w_la_in_swbd" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_s_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_in_swbd" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -15194,27 +15295,27 @@
             <CONNECTION INSTANCE="clk_map_psr_aclk" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="54" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_payld">
+        <PORT DIR="O" LEFT="55" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_w_la_out_swbd" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -15611,14 +15712,14 @@
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_S_LATENCY" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_SI" VALUE="3"/>
         <PARAMETER NAME="C_NUM_MI" VALUE="1"/>
         <PARAMETER NAME="C_TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_CONNECTIVITY" VALUE="&quot;11&quot;"/>
+        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b111"/>
         <PARAMETER NAME="S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="S_LATENCY" VALUE="0"/>
-        <PARAMETER NAME="NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="NUM_SI" VALUE="3"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
         <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
@@ -15888,7 +15989,7 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aclken" POLARITY="ACTIVE_LOW" SIGIS="ce"/>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_r_node" PORT="m_sc_send"/>
           </CONNECTIONS>
@@ -15896,7 +15997,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_r_node" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_r_node" PORT="m_sc_req"/>
           </CONNECTIONS>
@@ -15904,7 +16005,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_r_node" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_r_node" PORT="m_sc_info"/>
           </CONNECTIONS>
@@ -15912,7 +16013,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_r_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="111" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_payld">
+        <PORT DIR="I" LEFT="167" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_r_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -15920,7 +16021,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_r_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_r_node_m_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_r_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
@@ -15928,22 +16029,22 @@
             <CONNECTION INSTANCE="m01_nodes_m01_r_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_r_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_r_node" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_r_node" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_r_node_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_r_node" PORT="s_sc_info"/>
           </CONNECTIONS>
@@ -15984,6 +16085,16 @@
             <PORTMAP LOGICAL="RECV" PHYSICAL="s_sc_recv"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="S02_SC" TYPE="SLAVE" VLNV="xilinx.com:interface:sc:1.0">
+          <PARAMETER NAME="BRIDGES" VALUE="M00_SC:M01_SC:M02_SC:M03_SC:M04_SC:M05_SC:M06_SC:M07_SC:M08_SC:M09_SC:M10_SC:M11_SC:M12_SC:M13_SC:M14_SC:M15_SC"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="SEND" PHYSICAL="s_sc_send"/>
+            <PORTMAP LOGICAL="REQ" PHYSICAL="s_sc_req"/>
+            <PORTMAP LOGICAL="INFO" PHYSICAL="s_sc_info"/>
+            <PORTMAP LOGICAL="PAYLD" PHYSICAL="s_sc_payld"/>
+            <PORTMAP LOGICAL="RECV" PHYSICAL="s_sc_recv"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="6" FULLNAME="/switchboards/w_la_in_swbd" HWVERSION="1.0" INSTANCE="switchboards_w_la_in_swbd" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="sc_switchboard" VLNV="xilinx.com:ip:sc_switchboard:1.0">
@@ -15991,7 +16102,7 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="K_MAX_INFO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
@@ -16006,7 +16117,7 @@
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="M00_S00_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S01_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S02_CONNECTIVITY" VALUE="1"/>
@@ -16288,7 +16399,7 @@
             <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_w_node_m_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="s00_nodes_s00_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="s00_nodes_s00_w_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
@@ -16318,7 +16429,7 @@
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="54" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_s_sc_payld">
+        <PORT DIR="O" LEFT="55" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -16351,22 +16462,22 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="C_PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="K_MAX_INFO_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="C_S_LATENCY" VALUE="0"/>
         <PARAMETER NAME="C_NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="C_NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_MI" VALUE="3"/>
         <PARAMETER NAME="C_TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b11"/>
+        <PARAMETER NAME="C_CONNECTIVITY" VALUE="0b111"/>
         <PARAMETER NAME="S_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="M_PIPELINES" VALUE="0"/>
         <PARAMETER NAME="S_LATENCY" VALUE="0"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="TESTING_MODE" VALUE="0"/>
-        <PARAMETER NAME="PAYLD_WIDTH" VALUE="55"/>
+        <PARAMETER NAME="PAYLD_WIDTH" VALUE="56"/>
         <PARAMETER NAME="M00_S00_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S01_CONNECTIVITY" VALUE="1"/>
         <PARAMETER NAME="M00_S02_CONNECTIVITY" VALUE="1"/>
@@ -16633,32 +16744,32 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="aclken" POLARITY="ACTIVE_LOW" SIGIS="ce"/>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_send">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="m_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_req">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="m_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_info">
+        <PORT DIR="I" LEFT="2" NAME="s_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="m_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="54" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_payld">
+        <PORT DIR="I" LEFT="55" NAME="s_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="m_sc_payld"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_recv">
+        <PORT DIR="O" LEFT="2" NAME="s_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="switchboards_i_nodes_i_w_node_m_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="switchboards_i_nodes_i_w_node" PORT="m_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_recv">
+        <PORT DIR="I" LEFT="2" NAME="m_sc_recv" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_recv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
@@ -16666,7 +16777,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_w_node" PORT="s_sc_recv"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_send">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_send" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_send">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="s_sc_send"/>
           </CONNECTIONS>
@@ -16674,7 +16785,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_w_node" PORT="s_sc_send"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_req">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_req" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_req">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="s_sc_req"/>
           </CONNECTIONS>
@@ -16682,7 +16793,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_w_node" PORT="s_sc_req"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_info">
+        <PORT DIR="O" LEFT="2" NAME="m_sc_info" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_info">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="s_sc_info"/>
           </CONNECTIONS>
@@ -16690,7 +16801,7 @@
             <CONNECTION INSTANCE="m01_nodes_m01_w_node" PORT="s_sc_info"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="109" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_payld">
+        <PORT DIR="O" LEFT="167" NAME="m_sc_payld" RIGHT="0" SIGIS="undef" SIGNAME="m01_nodes_m01_w_node_s_sc_payld">
           <CONNECTIONS>
             <CONNECTION INSTANCE="m00_nodes_m00_w_node" PORT="s_sc_payld"/>
           </CONNECTIONS>
@@ -16720,6 +16831,15 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="switchboards_w_la_out_swbd_M01_SC" NAME="M01_SC" TYPE="MASTER" VLNV="xilinx.com:interface:sc:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="RECV" PHYSICAL="m_sc_recv"/>
+            <PORTMAP LOGICAL="SEND" PHYSICAL="m_sc_send"/>
+            <PORTMAP LOGICAL="REQ" PHYSICAL="m_sc_req"/>
+            <PORTMAP LOGICAL="INFO" PHYSICAL="m_sc_info"/>
+            <PORTMAP LOGICAL="PAYLD" PHYSICAL="m_sc_payld"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="M02_SC" TYPE="MASTER" VLNV="xilinx.com:interface:sc:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="RECV" PHYSICAL="m_sc_recv"/>
             <PORTMAP LOGICAL="SEND" PHYSICAL="m_sc_send"/>

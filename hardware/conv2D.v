@@ -5,7 +5,7 @@ module conv2D(
     input wire  M_AXIS_ACLK,
     input wire  M_AXIS_ARESETN,
     input wire  S_AXIS_ACLK,
-    input wire  S_AXIS_ARESETN,
+	input wire  S_AXIS_ARESETN,
     
     //master AXI interface - sends data back to DRAM
     output wire  M_AXIS_TVALID, // Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
@@ -22,39 +22,39 @@ module conv2D(
     input wire  S_AXIS_TVALID // Data is in valid
     );
     
-    // // outputs
-    wire [15:0] products1,products2,products3,products4,products5,products6,products7,products8,products9;
-    assign products1 = products[0][0];
-    assign products2 = products[0][1];
-    assign products3 = products[0][2];
-    assign products4 = products[1][0];
-    assign products5 = products[1][1];
-    assign products6 = products[1][2];
-    assign products7 = products[2][0];
-    assign products8 = products[2][1];
-    assign products9 = products[2][2];
+    // // // outputs
+    // wire [15:0] products1,products2,products3,products4,products5,products6,products7,products8,products9;
+    // assign products1 = products[0][0];
+    // assign products2 = products[0][1];
+    // assign products3 = products[0][2];
+    // assign products4 = products[1][0];
+    // assign products5 = products[1][1];
+    // assign products6 = products[1][2];
+    // assign products7 = products[2][0];
+    // assign products8 = products[2][1];
+    // assign products9 = products[2][2];
 
-    wire [15:0] filter1,filter2,filter3,filter4,filter5,filter6,filter7,filter8,filter9;
-    assign filter1 = filter[0][0];
-    assign filter2 = filter[0][1];
-    assign filter3 = filter[0][2];
-    assign filter4 = filter[1][0];
-    assign filter5 = filter[1][1];
-    assign filter6 = filter[1][2];
-    assign filter7 = filter[2][0];
-    assign filter8 = filter[2][1];
-    assign filter9 = filter[2][2];
+    // wire [15:0] filter1,filter2,filter3,filter4,filter5,filter6,filter7,filter8,filter9;
+    // assign filter1 = filter[0][0];
+    // assign filter2 = filter[0][1];
+    // assign filter3 = filter[0][2];
+    // assign filter4 = filter[1][0];
+    // assign filter5 = filter[1][1];
+    // assign filter6 = filter[1][2];
+    // assign filter7 = filter[2][0];
+    // assign filter8 = filter[2][1];
+    // assign filter9 = filter[2][2];
 
-    wire [15:0] data1,data2,data3,data4,data5,data6,data7,data8,data9;
-    assign data1 = data[0][0];
-    assign data2 = data[0][1];
-    assign data3 = data[0][2];
-    assign data4 = data[1][0];
-    assign data5 = data[1][1];
-    assign data6 = data[1][2];
-    assign data7 = data[2][0];
-    assign data8 = data[2][1];
-    assign data9 = data[2][2];
+    // wire [15:0] data1,data2,data3,data4,data5,data6,data7,data8,data9;
+    // assign data1 = data[0][0];
+    // assign data2 = data[0][1];
+    // assign data3 = data[0][2];
+    // assign data4 = data[1][0];
+    // assign data5 = data[1][1];
+    // assign data6 = data[1][2];
+    // assign data7 = data[2][0];
+    // assign data8 = data[2][1];
+    // assign data9 = data[2][2];
 
 
     //==========================================================================================================
@@ -74,12 +74,12 @@ module conv2D(
     assign RX_last = RX && S_AXIS_TLAST;
     assign systolic_advance = zero_padding || arr_rst || new_data; //indicates when the systolic array should step forward
     assign new_filt_data = (state == 0 || state == 1) && RX_data;
+    //assign arr_rst = (state == 0 && ~RX);
     assign arr_rst = (state == 0 && ~RX) || S_AXIS_ARESETN;
     assign new_data = (state == 2 || state == 3) && RX_data;
+    //TODO: change w/o row_count and add TX
     assign zero_padding = state == 4 && (row_count != 2); //pad a zero into array if we are in last state and are transmitting data as well
     assign TX_last = TX_count == data_count / 3  - 2; // this is for full convolution
-    wire [15:0] temp;
-    assign temp = data_count / 3;
     
     //AXI interface control 
     assign M_AXIS_TVALID = state == 4 || (state == 3 && S_AXIS_TVALID); //
@@ -101,10 +101,9 @@ module conv2D(
         else if (arr_rst) begin
             filter[0][0] <= 0; //load zeros in order to reset
             filter_size <= 0;
-            state <= 0;
         end
     end
-
+    
     genvar row, col;
     generate
     for (row=0; row<3; row=row+1) begin
@@ -133,11 +132,15 @@ module conv2D(
         if (new_data) begin 
             data[row_count][2] <= S_AXIS_TDATA; //shift register input
             data_count <= data_count+1;
+            //Reset & count rows
             if (row_count != 2) row_count <= row_count + 1;
             if (row_count == 2) row_count <= 0;
         end
-        if (TX) TX_count <= TX_count + 1;
-        if (arr_rst) TX_count <= 0;
+        if (zero_padding) begin
+            data[row_count][2] <= 0; //zero padding at end
+            if (row_count != 2) row_count <= row_count + 1;
+            if (row_count == 2) row_count <= 0;
+        end
         if (arr_rst) begin
             data_count <= 0;
             row_count <= 0;
@@ -145,12 +148,8 @@ module conv2D(
             data[1][2] <= 0;
             data[2][2] <= 0;
         end
-        if (zero_padding) begin
-            data[row_count][2] <= 0; //zero padding at end
-            if (row_count != 2) row_count <= row_count + 1;
-            if (row_count == 2) row_count <= 0;
-        end
-
+        if (TX) TX_count <= TX_count + 1;
+        if (arr_rst) TX_count <= 0;
     end
 
     generate
@@ -160,7 +159,7 @@ module conv2D(
                 // data[0][0] taken care in previous block
                 if(row_count == 0 || arr_rst) data[0][col-1] <= data[0][col];
                 if(row_count == 1 || arr_rst) data[1][col-1] <= data[1][col];
-                if(row_count == 2 || arr_rst ) data[2][col-1] <= data[2][col];
+                if(row_count == 2 || arr_rst) data[2][col-1] <= data[2][col];
             end 
         end
     end
@@ -184,7 +183,6 @@ module conv2D(
                 end
             end
         end
-
         for(row=0; row<3; row=row+1) begin
             always @(posedge S_AXIS_ACLK) begin
                 if (systolic_advance) begin
@@ -199,11 +197,16 @@ module conv2D(
     //rules for changing system state
     
     always @(posedge S_AXIS_ACLK) begin
+        if (arr_rst) begin
+            state <= 0;
+        end
+        else begin
         if (state == 0 && RX_data) state <= 1; //start loading to filter array after being in idle state
         if (state == 1 && RX_last) state <= 2; //when done loading to filter array, move to processing state
         if (state == 2 && data_count == 10 && RX_data) state <= 3; //once first data conv has propegated through arithmetic, move to send&receive state
         if (state == 3 && RX_last) state <= 4; //once all data has been received, move to send-only state
         if (state == 4 && TX && TX_last) state <= 0; //once all results have been sent, return to idle state
+        end
     end
     
 endmodule

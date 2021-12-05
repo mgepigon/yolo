@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-//Date        : Sat Dec  4 19:46:55 2021
+//Date        : Sun Dec  5 13:50:27 2021
 //Host        : mrac-PC running 64-bit major release  (build 9200)
 //Command     : generate_target test.bd
 //Design      : test
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "test.hwdef" *) 
+(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "test.hwdef" *) 
 module test
    (DDR_addr,
     DDR_ba,
@@ -163,11 +163,11 @@ module test
   wire axis_data_fifo_M_AXIS_TLAST;
   wire axis_data_fifo_M_AXIS_TREADY;
   wire axis_data_fifo_M_AXIS_TVALID;
-  wire [15:0]conv1D_mod_0_M_AXIS_TDATA;
-  wire [1:0]conv1D_mod_0_M_AXIS_TKEEP;
-  wire conv1D_mod_0_M_AXIS_TLAST;
-  wire conv1D_mod_0_M_AXIS_TREADY;
-  wire conv1D_mod_0_M_AXIS_TVALID;
+  wire [15:0]conv2D_0_M_AXIS_TDATA;
+  wire [1:0]conv2D_0_M_AXIS_TKEEP;
+  wire conv2D_0_M_AXIS_TLAST;
+  wire conv2D_0_M_AXIS_TREADY;
+  wire conv2D_0_M_AXIS_TVALID;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -416,6 +416,14 @@ module test
         .M01_AXI_wdata(axi_smc_2_M01_AXI_WDATA),
         .M01_AXI_wready(axi_smc_2_M01_AXI_WREADY),
         .M01_AXI_wvalid(axi_smc_2_M01_AXI_WVALID),
+        .M02_AXI_arready(1'b0),
+        .M02_AXI_awready(1'b0),
+        .M02_AXI_bresp({1'b0,1'b0}),
+        .M02_AXI_bvalid(1'b0),
+        .M02_AXI_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .M02_AXI_rresp({1'b0,1'b0}),
+        .M02_AXI_rvalid(1'b0),
+        .M02_AXI_wready(1'b0),
         .S00_AXI_araddr(processing_system7_0_M_AXI_GP0_ARADDR),
         .S00_AXI_arburst(processing_system7_0_M_AXI_GP0_ARBURST),
         .S00_AXI_arcache(processing_system7_0_M_AXI_GP0_ARCACHE),
@@ -477,21 +485,21 @@ module test
         .m_axis_tvalid(axis_data_fifo_0_M_AXIS_TVALID),
         .s_axis_aclk(processing_system7_0_FCLK_CLK0),
         .s_axis_aresetn(rst_ps7_0_50M_interconnect_aresetn),
-        .s_axis_tdata(conv1D_mod_0_M_AXIS_TDATA),
-        .s_axis_tkeep(conv1D_mod_0_M_AXIS_TKEEP),
-        .s_axis_tlast(conv1D_mod_0_M_AXIS_TLAST),
-        .s_axis_tready(conv1D_mod_0_M_AXIS_TREADY),
-        .s_axis_tvalid(conv1D_mod_0_M_AXIS_TVALID));
-  test_conv1D_mod_0_0 conv1D_mod_0
+        .s_axis_tdata(conv2D_0_M_AXIS_TDATA),
+        .s_axis_tkeep(conv2D_0_M_AXIS_TKEEP),
+        .s_axis_tlast(conv2D_0_M_AXIS_TLAST),
+        .s_axis_tready(conv2D_0_M_AXIS_TREADY),
+        .s_axis_tvalid(conv2D_0_M_AXIS_TVALID));
+  test_conv2D_0_0 conv2D_0
        (.M_AXIS_ACLK(processing_system7_0_FCLK_CLK0),
-        .M_AXIS_ARESETN(rst_ps7_0_50M_peripheral_aresetn),
-        .M_AXIS_TDATA(conv1D_mod_0_M_AXIS_TDATA),
-        .M_AXIS_TKEEP(conv1D_mod_0_M_AXIS_TKEEP),
-        .M_AXIS_TLAST(conv1D_mod_0_M_AXIS_TLAST),
-        .M_AXIS_TREADY(conv1D_mod_0_M_AXIS_TREADY),
-        .M_AXIS_TVALID(conv1D_mod_0_M_AXIS_TVALID),
+        .M_AXIS_ARESETN(rst_ps7_0_50M_interconnect_aresetn),
+        .M_AXIS_TDATA(conv2D_0_M_AXIS_TDATA),
+        .M_AXIS_TKEEP(conv2D_0_M_AXIS_TKEEP),
+        .M_AXIS_TLAST(conv2D_0_M_AXIS_TLAST),
+        .M_AXIS_TREADY(conv2D_0_M_AXIS_TREADY),
+        .M_AXIS_TVALID(conv2D_0_M_AXIS_TVALID),
         .S_AXIS_ACLK(processing_system7_0_FCLK_CLK0),
-        .S_AXIS_ARESETN(rst_ps7_0_50M_peripheral_aresetn),
+        .S_AXIS_ARESETN(rst_ps7_0_50M_interconnect_aresetn),
         .S_AXIS_TDATA(axis_data_fifo_M_AXIS_TDATA),
         .S_AXIS_TKEEP(axis_data_fifo_M_AXIS_TKEEP),
         .S_AXIS_TLAST(axis_data_fifo_M_AXIS_TLAST),

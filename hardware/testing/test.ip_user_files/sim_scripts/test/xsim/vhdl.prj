@@ -1,0 +1,9 @@
+vhdl xil_defaultlib  \
+"../../../bd/test/ip/test_axi_dma_from_pl_to_ps_0/sim/test_axi_dma_from_pl_to_ps_0.vhd" \
+"../../../bd/test/ip/test_axi_dma_from_ps_to_pl_0/sim/test_axi_dma_from_ps_to_pl_0.vhd" \
+"../../../bd/test/ip/test_axi_smc_0/bd_0/ip/ip_1/sim/bd_0eb6_psr_aclk_0.vhd" \
+"../../../bd/test/ip/test_axi_smc_1_0/bd_0/ip/ip_1/sim/bd_809f_psr_aclk_0.vhd" \
+"../../../bd/test/ip/test_axi_smc_2_0/bd_0/ip/ip_1/sim/bd_806f_psr_aclk_0.vhd" \
+"../../../bd/test/ip/test_rst_ps7_0_50M_0/sim/test_rst_ps7_0_50M_0.vhd" \
+
+nosort

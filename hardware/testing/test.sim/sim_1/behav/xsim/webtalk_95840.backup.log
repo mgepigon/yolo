@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2021.1.1 (64-bit)
+# SW Build 3286242 on Wed Jul 28 13:10:47 MDT 2021
+# IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+# Start of session at: Sun Dec  5 13:28:01 2021
+# Process ID: 95840
+# Current directory: C:/Users/marc/Desktop/yolo/hardware/testing/test.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/marc/Desktop/yolo/hardware/testing/test.sim/sim_1/behav/xsim/xsim.dir/test_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/marc/Desktop/yolo/hardware/testing/test.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/marc/Desktop/yolo/hardware/testing/test.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/marc/Desktop/yolo/hardware/testing/test.sim/sim_1/behav/xsim/xsim.dir/test_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Dec  5 13:28:01 2021...

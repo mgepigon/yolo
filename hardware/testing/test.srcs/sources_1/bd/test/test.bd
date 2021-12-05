@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA533DC59CAD",
+      "boundary_crc": "0xCC6CFA538A970559",
       "device": "xc7z020clg400-3",
       "gen_directory": "../../../../test.gen/sources_1/bd/test",
       "name": "test",
@@ -20,7 +20,7 @@
       "axis_data_fifo_0": "",
       "processing_system7_0": "",
       "rst_ps7_0_50M": "",
-      "conv1D_mod_0": ""
+      "conv2D_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -88,6 +88,11 @@
             "value_src": "default"
           }
         }
+      },
+      "gpio_rtl_0": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
+        "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
       }
     },
     "components": {
@@ -296,7 +301,7 @@
         "inst_hier_path": "axi_smc_2",
         "parameters": {
           "NUM_MI": {
-            "value": "2"
+            "value": "3"
           },
           "NUM_SI": {
             "value": "1"
@@ -317,7 +322,8 @@
             },
             "bridges": [
               "M00_AXI",
-              "M01_AXI"
+              "M01_AXI",
+              "M02_AXI"
             ]
           },
           "M00_AXI": {
@@ -369,6 +375,31 @@
                 "value": "0"
               }
             }
+          },
+          "M02_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "8"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "8"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            }
           }
         }
       },
@@ -376,7 +407,12 @@
         "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
         "xci_name": "test_axis_data_fifo_0",
         "xci_path": "ip\\test_axis_data_fifo_0\\test_axis_data_fifo_0.xci",
-        "inst_hier_path": "axis_data_fifo"
+        "inst_hier_path": "axis_data_fifo",
+        "parameters": {
+          "FIFO_DEPTH": {
+            "value": "32768"
+          }
+        }
       },
       "axis_data_fifo_0": {
         "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
@@ -384,8 +420,8 @@
         "xci_path": "ip\\test_axis_data_fifo_0_0\\test_axis_data_fifo_0_0.xci",
         "inst_hier_path": "axis_data_fifo_0",
         "parameters": {
-          "HAS_TLAST": {
-            "value": "1"
+          "FIFO_DEPTH": {
+            "value": "32768"
           }
         }
       },
@@ -563,14 +599,14 @@
         "xci_path": "ip\\test_rst_ps7_0_50M_0\\test_rst_ps7_0_50M_0.xci",
         "inst_hier_path": "rst_ps7_0_50M"
       },
-      "conv1D_mod_0": {
-        "vlnv": "xilinx.com:module_ref:conv1D_mod:1.0",
-        "xci_name": "test_conv1D_mod_0_0",
-        "xci_path": "ip\\test_conv1D_mod_0_0\\test_conv1D_mod_0_0.xci",
-        "inst_hier_path": "conv1D_mod_0",
+      "conv2D_0": {
+        "vlnv": "xilinx.com:module_ref:conv2D:1.0",
+        "xci_name": "test_conv2D_0_0",
+        "xci_path": "ip\\test_conv2D_0_0\\test_conv2D_0_0.xci",
+        "inst_hier_path": "conv2D_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "conv1D_mod",
+          "ref_name": "conv2D",
           "boundary_crc": "0x0"
         },
         "interface_ports": {
@@ -841,12 +877,12 @@
       "axis_data_fifo_M_AXIS": {
         "interface_ports": [
           "axis_data_fifo/M_AXIS",
-          "conv1D_mod_0/S_AXIS"
+          "conv2D_0/S_AXIS"
         ]
       },
-      "conv1D_mod_0_M_AXIS": {
+      "conv2D_0_M_AXIS": {
         "interface_ports": [
-          "conv1D_mod_0/M_AXIS",
+          "conv2D_0/M_AXIS",
           "axis_data_fifo_0/S_AXIS"
         ]
       },
@@ -886,8 +922,8 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "processing_system7_0/S_AXI_HP2_ACLK",
           "rst_ps7_0_50M/slowest_sync_clk",
-          "conv1D_mod_0/M_AXIS_ACLK",
-          "conv1D_mod_0/S_AXIS_ACLK"
+          "conv2D_0/M_AXIS_ACLK",
+          "conv2D_0/S_AXIS_ACLK"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -901,7 +937,9 @@
           "rst_ps7_0_50M/interconnect_aresetn",
           "axi_smc_2/aresetn",
           "axis_data_fifo/s_axis_aresetn",
-          "axis_data_fifo_0/s_axis_aresetn"
+          "axis_data_fifo_0/s_axis_aresetn",
+          "conv2D_0/M_AXIS_ARESETN",
+          "conv2D_0/S_AXIS_ARESETN"
         ]
       },
       "rst_ps7_0_50M_peripheral_aresetn": {
@@ -910,9 +948,7 @@
           "axi_dma_from_pl_to_ps/axi_resetn",
           "axi_dma_from_ps_to_pl/axi_resetn",
           "axi_smc/aresetn",
-          "axi_smc_1/aresetn",
-          "conv1D_mod_0/M_AXIS_ARESETN",
-          "conv1D_mod_0/S_AXIS_ARESETN"
+          "axi_smc_1/aresetn"
         ]
       }
     },
