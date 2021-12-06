@@ -1,0 +1,50 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|               clk_fpga_0 |               clk_fpga_0 |                                                                       test_i/conv2D_0/inst/state_reg[2]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axis_data_fifo_out/inst/gen_fifo.xpm_fifo_axis_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/DIBDI[2]|
+|               clk_fpga_0 |               clk_fpga_0 |                                                                       test_i/conv2D_0/inst/state_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                                                                       test_i/conv2D_0/inst/state_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_dma_from_pl_to_ps/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/sig_btt_eq_0_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/FSM_sequential_w_state_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/FSM_sequential_w_state_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/FSM_sequential_w_state_reg[2]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/w_size_mask_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/aw_incr_reg[2]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/aw_incr_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/w_size_mask_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/aw_incr_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/ar_cnt_reg[3]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/m_axi_rready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_transaction_regulator/inst/gen_endpoint.gen_w_singleorder.w_singleorder/gen_id_reg.s_single_aready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/m_axi_arvalid_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/ar_cnt_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/s_axi_arready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/ar_cnt_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/FSM_sequential_r_state_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                       test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.w_state_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                 test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/aw_reg_stall/state_reg[s_ready_i]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[2]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_1/inst/s00_nodes/s00_r_node/inst/gen_normal.inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_wr.afull_r_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/gen_axi.gen_read.read_cs_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/gen_axi.gen_read.s_axi_arready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/FSM_onehot_gen_axi.gen_write.write_cs_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                       test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.r_state_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/gen_axi.gen_read.s_axi_rlast_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |                       test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.r_state_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                       test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.w_state_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc/inst/s00_nodes/s00_w_node/inst/gen_normal.inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_wr.prog_full_r_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_1/inst/s00_nodes/s00_r_node/inst/gen_normal.inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_rd_addrb/count_r_reg[5]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_transaction_regulator/inst/gen_endpoint.gen_r_singleorder.r_singleorder/gen_id_reg.s_single_aready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |                   test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/aw_reg_stall/state_reg[storage]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                 test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/state_reg[s_ready_i]/D|
+|               clk_fpga_0 |               clk_fpga_0 |                   test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/state_reg[storage]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/gen_axi.gen_write.s_axi_wready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/fifoaddr_reg[3]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/fifoaddr_reg[1]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/fifoaddr_reg[2]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc_2/inst/s00_entry_pipeline/s00_mmu/inst/gen_endpoint.decerr_slave_inst/gen_axi.gen_write.s_axi_awready_i_reg/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc/inst/s00_entry_pipeline/s00_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_pipelined.state_reg[0]/D|
+|               clk_fpga_0 |               clk_fpga_0 |test_i/axi_smc/inst/s00_nodes/s00_b_node/inst/gen_normal.inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_wr.full_r_reg_inv/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

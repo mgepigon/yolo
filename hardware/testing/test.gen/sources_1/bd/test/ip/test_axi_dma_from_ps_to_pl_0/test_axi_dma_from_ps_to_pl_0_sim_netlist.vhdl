@@ -1,11 +1,11 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
--- Date        : Sat Dec  4 01:54:25 2021
+-- Date        : Sun Dec  5 20:16:24 2021
 -- Host        : mrac-PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top test_axi_dma_from_ps_to_pl_0 -prefix
---               test_axi_dma_from_ps_to_pl_0_ test_axi_dma_0_1_sim_netlist.vhdl
--- Design      : test_axi_dma_0_1
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axi_dma_from_ps_to_pl_0/test_axi_dma_from_ps_to_pl_0_sim_netlist.vhdl
+-- Design      : test_axi_dma_from_ps_to_pl_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z020clg400-3
@@ -38,6 +38,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_fifo is
     sig_init_done_2 : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 59 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_fifo : entity is "axi_datamover_fifo";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_fifo;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_fifo is
@@ -48,10 +50,10 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_fifo is
   signal \sig_init_done_i_1__3_n_0\ : STD_LOGIC;
   signal \^sig_init_reg_reg_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of sig_init_done_i_1 : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \sig_init_done_i_1__0\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \sig_init_done_i_1__1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \sig_init_done_i_1__2\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of sig_init_done_i_1 : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \sig_init_done_i_1__0\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \sig_init_done_i_1__1\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \sig_init_done_i_1__2\ : label is "soft_lutpair47";
 begin
   E(0) <= \^e\(0);
   s_axis_mm2s_cmd_tready <= \^s_axis_mm2s_cmd_tready\;
@@ -874,10 +876,10 @@ architecture STRUCTURE of \test_axi_dma_from_ps_to_pl_0_axi_datamover_fifo__para
   signal m_axis_mm2s_sts_tdata_int : STD_LOGIC_VECTOR ( 6 downto 4 );
   signal \^sig_init_done\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \USE_SINGLE_REG.sig_regfifo_full_reg_i_1__0\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of mm2s_decerr_i_i_1 : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of mm2s_interr_i_i_1 : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of sig_rd_sts_interr_reg_i_1 : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \USE_SINGLE_REG.sig_regfifo_full_reg_i_1__0\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of mm2s_decerr_i_i_1 : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of mm2s_interr_i_i_1 : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of sig_rd_sts_interr_reg_i_1 : label is "soft_lutpair44";
 begin
   \USE_SINGLE_REG.sig_regfifo_empty_reg_reg_0\ <= \^use_single_reg.sig_regfifo_empty_reg_reg_0\;
   \USE_SINGLE_REG.sig_regfifo_full_reg_reg_0\ <= \^use_single_reg.sig_regfifo_full_reg_reg_0\;
@@ -1062,6 +1064,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_status_cntl is
     sig_rd_sts_decerr_reg0 : in STD_LOGIC;
     sig_data2rsc_slverr : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_status_cntl : entity is "axi_datamover_rd_status_cntl";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_status_cntl;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_status_cntl is
@@ -1153,6 +1157,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_reset is
     sig_halt_cmplt_reg_0 : in STD_LOGIC;
     halt : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_reset : entity is "axi_datamover_reset";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_reset;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_reset is
@@ -1266,6 +1272,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_skid_buf is
     \sig_data_reg_out_reg[15]_0\ : in STD_LOGIC_VECTOR ( 15 downto 0 );
     \sig_strb_skid_reg_reg[1]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_skid_buf : entity is "axi_datamover_skid_buf";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_skid_buf;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_skid_buf is
@@ -1910,12 +1918,14 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_strb_gen2 is
     \sig_xfer_strt_strb_ireg3_reg[3]_0\ : in STD_LOGIC;
     \sig_xfer_strt_strb_ireg3_reg[3]_1\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_strb_gen2 : entity is "axi_datamover_strb_gen2";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_strb_gen2;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_strb_gen2 is
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of lsig_end_vect : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of lsig_start_vect : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of lsig_end_vect : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of lsig_start_vect : label is "soft_lutpair48";
 begin
 lsig_end_vect: unisim.vcomponents.LUT5
     generic map(
@@ -1987,6 +1997,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_lite_if is
     s_axi_lite_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_lite_if : entity is "axi_dma_lite_if";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_lite_if;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_lite_if is
@@ -3975,6 +3987,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_cmdsts_if is
     \out\ : in STD_LOGIC;
     m_axis_mm2s_sts_tvalid_int : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_cmdsts_if : entity is "axi_dma_mm2s_cmdsts_if";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_cmdsts_if;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_cmdsts_if is
@@ -4144,6 +4158,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_sts_mngr is
     idle : in STD_LOGIC;
     mm2s_dmasr : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_sts_mngr : entity is "axi_dma_mm2s_sts_mngr";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_sts_mngr;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_sts_mngr is
@@ -4253,6 +4269,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_register is
     axi_dma_tstvec : in STD_LOGIC_VECTOR ( 0 to 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_register : entity is "axi_dma_register";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_register;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_register is
@@ -5538,6 +5556,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_reset is
     scndry_out : in STD_LOGIC;
     mm2s_stop : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_reset : entity is "axi_dma_reset";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_reset;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_reset is
@@ -5569,8 +5589,8 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_reset is
   signal sft_rst_dly7 : STD_LOGIC;
   signal soft_reset_re : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \GNE_SYNC_RESET.min_assert_sftrst_i_1\ : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of \GNE_SYNC_RESET.prmry_reset_out_n_i_1\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \GNE_SYNC_RESET.min_assert_sftrst_i_1\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of \GNE_SYNC_RESET.prmry_reset_out_n_i_1\ : label is "soft_lutpair68";
   attribute KEEP : string;
   attribute KEEP of \GNE_SYNC_RESET.prmry_reset_out_n_reg\ : label is "yes";
   attribute equivalent_register_removal of \GNE_SYNC_RESET.prmry_reset_out_n_reg\ : label is "no";
@@ -5911,6 +5931,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_smple_sm is
     \GEN_CMD_BTT_EQL_23.cmnd_data_reg[26]_0\ : in STD_LOGIC;
     \GEN_CMD_BTT_EQL_23.cmnd_data_reg[25]_0\ : in STD_LOGIC_VECTOR ( 25 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_smple_sm : entity is "axi_dma_smple_sm";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_smple_sm;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_smple_sm is
@@ -6606,6 +6628,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_sofeof_gen is
     m_axis_mm2s_tlast : in STD_LOGIC;
     \out\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_sofeof_gen : entity is "axi_dma_sofeof_gen";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_sofeof_gen;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_sofeof_gen is
@@ -6770,6 +6794,8 @@ entity test_axi_dma_from_ps_to_pl_0_cdc_sync is
     axi_resetn : in STD_LOGIC;
     s_axi_lite_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_cdc_sync : entity is "cdc_sync";
 end test_axi_dma_from_ps_to_pl_0_cdc_sync;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_cdc_sync is
@@ -6957,6 +6983,8 @@ entity test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f is
     SS : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_mm2s_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f : entity is "cntr_incr_decr_addn_f";
 end test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f is
@@ -6969,12 +6997,10 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f is
   signal sig_next_cmd_cmplt_reg_i_7_n_0 : STD_LOGIC;
   signal sig_rd_empty : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of FIFO_Full_i_1 : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[2]_i_1\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \sig_dbeat_cntr[6]_i_1\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of \sig_dbeat_cntr[7]_i_2\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of sig_ld_new_cmd_reg_i_1 : label is "soft_lutpair88";
-  attribute SOFT_HLUTNM of sig_next_cmd_cmplt_reg_i_1 : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of FIFO_Full_i_1 : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[2]_i_1\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \sig_dbeat_cntr[6]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \sig_dbeat_cntr[7]_i_2\ : label is "soft_lutpair61";
 begin
   Q(1 downto 0) <= \^q\(1 downto 0);
   sig_dqual_reg_empty_reg <= \^sig_dqual_reg_empty_reg\;
@@ -7252,10 +7278,10 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f_1 i
   signal \^sig_ok_to_post_rd_addr_reg\ : STD_LOGIC;
   signal sig_rd_empty : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FIFO_Full_i_1__1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[2]_i_1__1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \sig_next_addr_reg[31]_i_2\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of sig_posted_to_axi_2_i_1 : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \FIFO_Full_i_1__1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[2]_i_1__1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \sig_next_addr_reg[31]_i_2\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of sig_posted_to_axi_2_i_1 : label is "soft_lutpair43";
 begin
   Q(1 downto 0) <= \^q\(1 downto 0);
   sig_ok_to_post_rd_addr_reg <= \^sig_ok_to_post_rd_addr_reg\;
@@ -7384,8 +7410,8 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_cntr_incr_decr_addn_f_2 i
   signal addr_i_p1 : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal \^sig_wr_fifo\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[0]_i_1__0\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][0]_srl4_i_1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[0]_i_1__0\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][0]_srl4_i_1\ : label is "soft_lutpair40";
 begin
   Q(2 downto 0) <= \^q\(2 downto 0);
   sig_wr_fifo <= \^sig_wr_fifo\;
@@ -7501,6 +7527,8 @@ entity test_axi_dma_from_ps_to_pl_0_dynshreg_f is
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_mm2s_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_dynshreg_f : entity is "dynshreg_f";
 end test_axi_dma_from_ps_to_pl_0_dynshreg_f;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_dynshreg_f is
@@ -8718,10 +8746,8 @@ architecture STRUCTURE of \test_axi_dma_from_ps_to_pl_0_xpm_counter_updn__parame
   signal going_full1 : STD_LOGIC;
   signal \^leaving_empty0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \count_value_i[0]_i_1__1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \count_value_i[1]_i_1__1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \count_value_i[3]_i_1__1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \count_value_i[4]_i_1__1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \count_value_i[3]_i_1__1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \count_value_i[4]_i_1__1\ : label is "soft_lutpair17";
 begin
   \FSM_sequential_gen_fwft.curr_fwft_state_reg[1]\ <= \^fsm_sequential_gen_fwft.curr_fwft_state_reg[1]\;
   Q(6 downto 0) <= \^q\(6 downto 0);
@@ -9155,10 +9181,10 @@ architecture STRUCTURE of \test_axi_dma_from_ps_to_pl_0_xpm_counter_updn__parame
   signal \NLW_gwdc.wr_data_count_i_reg[7]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_gwdc.wr_data_count_i_reg[7]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \count_value_i[1]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \count_value_i[2]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \count_value_i[3]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \count_value_i[4]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \count_value_i[1]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \count_value_i[2]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \count_value_i[3]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \count_value_i[4]_i_1\ : label is "soft_lutpair19";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \gwdc.wr_data_count_i_reg[7]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \gwdc.wr_data_count_i_reg[7]_i_2\ : label is 35;
@@ -9522,8 +9548,8 @@ architecture STRUCTURE of \test_axi_dma_from_ps_to_pl_0_xpm_counter_updn__parame
   signal \count_value_i[6]_i_1__2_n_0\ : STD_LOGIC;
   signal \count_value_i[6]_i_2__2_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \count_value_i[3]_i_1__2\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \count_value_i[4]_i_1__2\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \count_value_i[3]_i_1__2\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \count_value_i[4]_i_1__2\ : label is "soft_lutpair18";
 begin
   Q(6 downto 0) <= \^q\(6 downto 0);
 \count_value_i[0]_i_1__2\: unisim.vcomponents.LUT4
@@ -9727,10 +9753,10 @@ architecture STRUCTURE of \test_axi_dma_from_ps_to_pl_0_xpm_counter_updn__parame
   signal \count_value_i[6]_i_1_n_0\ : STD_LOGIC;
   signal \count_value_i[6]_i_2_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \count_value_i[1]_i_1__0\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \count_value_i[2]_i_1__0\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \count_value_i[3]_i_1__0\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \count_value_i[4]_i_1__0\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \count_value_i[1]_i_1__0\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \count_value_i[2]_i_1__0\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \count_value_i[3]_i_1__0\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \count_value_i[4]_i_1__0\ : label is "soft_lutpair21";
 begin
   Q(6 downto 0) <= \^q\(6 downto 0);
 \count_value_i[0]_i_1__0\: unisim.vcomponents.LUT1
@@ -9911,6 +9937,8 @@ entity test_axi_dma_from_ps_to_pl_0_xpm_fifo_reg_bit is
     wr_clk : in STD_LOGIC;
     rst : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end test_axi_dma_from_ps_to_pl_0_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_xpm_fifo_reg_bit is
@@ -9953,6 +9981,8 @@ entity test_axi_dma_from_ps_to_pl_0_xpm_fifo_rst is
     rst_d1 : in STD_LOGIC;
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end test_axi_dma_from_ps_to_pl_0_xpm_fifo_rst;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_xpm_fifo_rst is
@@ -10105,6 +10135,8 @@ entity test_axi_dma_from_ps_to_pl_0_xpm_memory_base is
   attribute MESSAGE_CONTROL of test_axi_dma_from_ps_to_pl_0_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of test_axi_dma_from_ps_to_pl_0_xpm_memory_base : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : string;
   attribute P_ECC_MODE of test_axi_dma_from_ps_to_pl_0_xpm_memory_base : entity is "no_ecc";
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -10564,6 +10596,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_cmd_status is
     D : in STD_LOGIC_VECTOR ( 59 downto 0 );
     sig_rsc2stat_status : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_cmd_status : entity is "axi_datamover_cmd_status";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_cmd_status;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_cmd_status is
@@ -10646,6 +10680,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_pcc is
     s_axis_mm2s_cmd_tvalid_split : in STD_LOGIC;
     s_axis_mm2s_cmd_tready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_pcc : entity is "axi_datamover_pcc";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_pcc;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_pcc is
@@ -11011,9 +11047,7 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_pcc is
   signal NLW_sig_btt_lt_b2mbaa_im01_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_sig_predict_addr_lsh_ireg3_reg[15]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_onehot_sig_pcc_sm_state[2]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \FSM_onehot_sig_pcc_sm_state[5]_i_1\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of \FSM_onehot_sig_pcc_sm_state[6]_i_1\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \FSM_onehot_sig_pcc_sm_state[2]_i_1\ : label is "soft_lutpair50";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_onehot_sig_pcc_sm_state_reg[0]\ : label is "init:00000001,calc_2:00001000,calc_3:00010000,wait_on_xfer_push:00100000,chk_if_done:01000000,error_trap:10000000,calc_1:00000100,wait_for_cmd:00000010";
   attribute FSM_ENCODED_STATES of \FSM_onehot_sig_pcc_sm_state_reg[1]\ : label is "init:00000001,calc_2:00001000,calc_3:00010000,wait_on_xfer_push:00100000,chk_if_done:01000000,error_trap:10000000,calc_1:00000100,wait_for_cmd:00000010";
@@ -11022,86 +11056,38 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_pcc is
   attribute FSM_ENCODED_STATES of \FSM_onehot_sig_pcc_sm_state_reg[5]\ : label is "init:00000001,calc_2:00001000,calc_3:00010000,wait_on_xfer_push:00100000,chk_if_done:01000000,error_trap:10000000,calc_1:00000100,wait_for_cmd:00000010";
   attribute FSM_ENCODED_STATES of \FSM_onehot_sig_pcc_sm_state_reg[6]\ : label is "init:00000001,calc_2:00001000,calc_3:00010000,wait_on_xfer_push:00100000,chk_if_done:01000000,error_trap:10000000,calc_1:00000100,wait_for_cmd:00000010";
   attribute FSM_ENCODED_STATES of \FSM_onehot_sig_pcc_sm_state_reg[7]\ : label is "init:00000001,calc_2:00001000,calc_3:00010000,wait_on_xfer_push:00100000,chk_if_done:01000000,error_trap:10000000,calc_1:00000100,wait_for_cmd:00000010";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][10]_srl4_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][11]_srl4_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][12]_srl4_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][13]_srl4_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][14]_srl4_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][20]_srl4_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][21]_srl4_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][22]_srl4_i_1\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][23]_srl4_i_1\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][24]_srl4_i_1\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][25]_srl4_i_1\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][26]_srl4_i_1\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][27]_srl4_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][28]_srl4_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][29]_srl4_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][30]_srl4_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][31]_srl4_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][32]_srl4_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][33]_srl4_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][34]_srl4_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][35]_srl4_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][36]_srl4_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][37]_srl4_i_1\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][38]_srl4_i_1\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][39]_srl4_i_1\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][3]_srl4_i_1\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][40]_srl4_i_1\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][41]_srl4_i_1\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][42]_srl4_i_1\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][43]_srl4_i_1\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][44]_srl4_i_1\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][45]_srl4_i_1\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][46]_srl4_i_1\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][47]_srl4_i_1\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][48]_srl4_i_1\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][49]_srl4_i_1\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][50]_srl4_i_1\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][51]_srl4_i_1\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][52]_srl4_i_1\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][53]_srl4_i_1\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][54]_srl4_i_2\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][7]_srl4_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][8]_srl4_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][9]_srl4_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][20]_srl4_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.data_reg[3][21]_srl4_i_1\ : label is "soft_lutpair49";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \sig_addr_cntr_im0_msh_reg[0]_i_2\ : label is 11;
   attribute ADDER_THRESHOLD of \sig_addr_cntr_im0_msh_reg[12]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \sig_addr_cntr_im0_msh_reg[4]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \sig_addr_cntr_im0_msh_reg[8]_i_1\ : label is 11;
-  attribute SOFT_HLUTNM of \sig_addr_cntr_incr_ireg2[0]_i_1\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \sig_addr_cntr_incr_ireg2[2]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \sig_addr_cntr_incr_ireg2[5]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \sig_addr_cntr_incr_ireg2[6]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[0]_i_1\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[1]_i_2\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[2]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[4]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[5]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of sig_btt_eq_b2mbaa_ireg1_i_3 : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \sig_addr_cntr_incr_ireg2[0]_i_1\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \sig_addr_cntr_incr_ireg2[2]_i_1\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[0]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[1]_i_2\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[2]_i_1\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[4]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \sig_adjusted_addr_incr_ireg2[5]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of sig_btt_eq_b2mbaa_ireg1_i_3 : label is "soft_lutpair57";
   attribute COMPARATOR_THRESHOLD : integer;
   attribute COMPARATOR_THRESHOLD of sig_btt_lt_b2mbaa_im01_carry : label is 11;
-  attribute SOFT_HLUTNM of sig_btt_lt_b2mbaa_im01_carry_i_8 : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[1]_i_1\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[2]_i_1\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[3]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[4]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of sig_calc_error_pushed_i_1 : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of sig_last_addr_offset_im2 : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of sig_ld_xfer_reg_i_1 : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[2]_i_1\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[3]_i_1\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \sig_bytes_to_mbaa_ireg1[4]_i_1\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of sig_ld_xfer_reg_i_1 : label is "soft_lutpair56";
   attribute ADDER_THRESHOLD of \sig_predict_addr_lsh_ireg3_reg[11]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \sig_predict_addr_lsh_ireg3_reg[15]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \sig_predict_addr_lsh_ireg3_reg[3]_i_1\ : label is 35;
   attribute ADDER_THRESHOLD of \sig_predict_addr_lsh_ireg3_reg[7]_i_1\ : label is 35;
-  attribute SOFT_HLUTNM of sig_sm_pop_input_reg_i_1 : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \sig_strbgen_bytes_ireg2[0]_i_2\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \sig_xfer_end_strb_ireg3[1]_i_1\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \sig_xfer_end_strb_ireg3[3]_i_1\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of sig_xfer_reg_empty_i_1 : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \sig_xfer_strt_strb_ireg3[1]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \sig_xfer_strt_strb_ireg3[2]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of sig_sm_pop_input_reg_i_1 : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of \sig_strbgen_bytes_ireg2[0]_i_2\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \sig_xfer_end_strb_ireg3[1]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \sig_xfer_end_strb_ireg3[3]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of sig_xfer_reg_empty_i_1 : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \sig_xfer_strt_strb_ireg3[1]_i_1\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \sig_xfer_strt_strb_ireg3[2]_i_1\ : label is "soft_lutpair55";
 begin
   \in\(37 downto 0) <= \^in\(37 downto 0);
   sig_mstr2addr_cmd_valid <= \^sig_mstr2addr_cmd_valid\;
@@ -15684,6 +15670,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_mngr is
     \GEN_CMD_BTT_EQL_23.cmnd_data_reg[26]\ : in STD_LOGIC;
     \GEN_CMD_BTT_EQL_23.cmnd_data_reg[25]\ : in STD_LOGIC_VECTOR ( 25 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_mngr : entity is "axi_dma_mm2s_mngr";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_mngr;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_mm2s_mngr is
@@ -15829,6 +15817,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_reg_module is
     mm2s_smpl_decerr_set : in STD_LOGIC;
     axi_dma_tstvec : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_reg_module : entity is "axi_dma_reg_module";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_reg_module;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_reg_module is
@@ -16054,6 +16044,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma_rst_module is
     rdy : in STD_LOGIC;
     axi_resetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma_rst_module : entity is "axi_dma_rst_module";
 end test_axi_dma_from_ps_to_pl_0_axi_dma_rst_module;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_dma_rst_module is
@@ -16154,6 +16146,8 @@ entity test_axi_dma_from_ps_to_pl_0_srl_fifo_rbu_f is
     sig_cmd_stat_rst_user_reg_n_cdc_from : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_srl_fifo_rbu_f : entity is "srl_fifo_rbu_f";
 end test_axi_dma_from_ps_to_pl_0_srl_fifo_rbu_f;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_srl_fifo_rbu_f is
@@ -16506,6 +16500,8 @@ entity test_axi_dma_from_ps_to_pl_0_xpm_fifo_base is
   attribute FULL_RESET_VALUE of test_axi_dma_from_ps_to_pl_0_xpm_fifo_base : entity is 1;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of test_axi_dma_from_ps_to_pl_0_xpm_fifo_base : entity is "1'b1";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of test_axi_dma_from_ps_to_pl_0_xpm_fifo_base : entity is 8;
   attribute PE_THRESH_MAX : integer;
@@ -16634,8 +16630,8 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_xpm_fifo_base is
   signal \NLW_gen_sdpram.xpm_memory_base_inst_douta_UNCONNECTED\ : STD_LOGIC_VECTOR ( 38 downto 0 );
   signal \NLW_gen_sdpram.xpm_memory_base_inst_doutb_UNCONNECTED\ : STD_LOGIC_VECTOR ( 38 to 38 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_sequential_gen_fwft.curr_fwft_state[0]_i_1\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \FSM_sequential_gen_fwft.curr_fwft_state[1]_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \FSM_sequential_gen_fwft.curr_fwft_state[0]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \FSM_sequential_gen_fwft.curr_fwft_state[1]_i_1\ : label is "soft_lutpair23";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_sequential_gen_fwft.curr_fwft_state_reg[0]\ : label is "invalid:00,stage1_valid:01,both_stages_valid:10,stage2_valid:11";
   attribute FSM_ENCODED_STATES of \FSM_sequential_gen_fwft.curr_fwft_state_reg[1]\ : label is "invalid:00,stage1_valid:01,both_stages_valid:10,stage2_valid:11";
@@ -17124,6 +17120,8 @@ entity test_axi_dma_from_ps_to_pl_0_srl_fifo_f is
     sig_cmd_stat_rst_user_reg_n_cdc_from : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_srl_fifo_f : entity is "srl_fifo_f";
 end test_axi_dma_from_ps_to_pl_0_srl_fifo_f;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_srl_fifo_f is
@@ -17331,6 +17329,8 @@ entity test_axi_dma_from_ps_to_pl_0_xpm_fifo_sync is
   attribute FIFO_WRITE_DEPTH of test_axi_dma_from_ps_to_pl_0_xpm_fifo_sync : entity is 128;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of test_axi_dma_from_ps_to_pl_0_xpm_fifo_sync : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_xpm_fifo_sync : entity is "xpm_fifo_sync";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of test_axi_dma_from_ps_to_pl_0_xpm_fifo_sync : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -17891,6 +17891,8 @@ entity test_axi_dma_from_ps_to_pl_0_sync_fifo_fg is
     \sig_data_reg_out_reg[15]_0\ : in STD_LOGIC_VECTOR ( 15 downto 0 );
     sig_offset_fifo_data_out : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_sync_fifo_fg : entity is "sync_fifo_fg";
 end test_axi_dma_from_ps_to_pl_0_sync_fifo_fg;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_sync_fifo_fg is
@@ -17922,40 +17924,38 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_sync_fifo_fg is
   signal \NLW_xpm_fifo_instance.xpm_fifo_sync_inst_rd_data_count_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_xpm_fifo_instance.xpm_fifo_sync_inst_wr_data_count_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \INCLUDE_UNPACKING.lsig_0ffset_cntr[0]_i_2\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[1]_i_2\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[0]_i_1\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[10]_i_1\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[11]_i_1\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[12]_i_1\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[13]_i_1\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[14]_i_1\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[15]_i_3\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[1]_i_1\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[2]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[3]_i_1\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[4]_i_1\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[5]_i_1\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[6]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[7]_i_1\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[8]_i_1\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \sig_data_reg_out[9]_i_1\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[0]_i_1\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[10]_i_1\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[11]_i_1\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[12]_i_1\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[13]_i_1\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[14]_i_1\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[15]_i_1\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[1]_i_1\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[2]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[3]_i_1\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[4]_i_1\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[5]_i_1\ : label is "soft_lutpair35";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[6]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[7]_i_1\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[8]_i_1\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \sig_data_skid_reg[9]_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[0]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[10]_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[11]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[12]_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[13]_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[14]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[15]_i_3\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[1]_i_1\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[2]_i_1\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[3]_i_1\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[4]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[5]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[6]_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[7]_i_1\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[8]_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \sig_data_reg_out[9]_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[0]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[10]_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[11]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[12]_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[13]_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[14]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[15]_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[1]_i_1\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[2]_i_1\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[3]_i_1\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[4]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[5]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[6]_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[7]_i_1\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[8]_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \sig_data_skid_reg[9]_i_1\ : label is "soft_lutpair30";
   attribute CASCADE_HEIGHT : integer;
   attribute CASCADE_HEIGHT of \xpm_fifo_instance.xpm_fifo_sync_inst\ : label is 0;
   attribute DOUT_RESET_VALUE : string;
@@ -18580,6 +18580,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_addr_cntl is
     m_axi_mm2s_arready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_addr_cntl : entity is "axi_datamover_addr_cntl";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_addr_cntl;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_addr_cntl is
@@ -19175,6 +19177,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_rddata_cntl is
     sig_rst2all_stop_request : in STD_LOGIC;
     \sig_addr_posted_cntr_reg[2]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_rddata_cntl : entity is "axi_datamover_rddata_cntl";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_rddata_cntl;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_rddata_cntl is
@@ -19238,18 +19242,18 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_rddata_cntl
   signal sig_push_dqual_reg : STD_LOGIC;
   signal \xpm_fifo_instance.xpm_fifo_sync_inst_i_11_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of m_axi_mm2s_rready_INST_0 : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \sig_addr_posted_cntr[1]_i_1\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of \sig_addr_posted_cntr[2]_i_1\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of sig_coelsc_decerr_reg_i_1 : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of sig_coelsc_interr_reg_i_1 : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of sig_coelsc_slverr_reg_i_1 : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of \sig_dbeat_cntr[7]_i_4\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of sig_last_dbeat_i_5 : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of sig_m_valid_dup_i_3 : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of sig_next_cmd_cmplt_reg_i_3 : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \sig_sstrb_stop_mask[1]_i_1\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \xpm_fifo_instance.xpm_fifo_sync_inst_i_10\ : label is "soft_lutpair93";
+  attribute SOFT_HLUTNM of m_axi_mm2s_rready_INST_0 : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \sig_addr_posted_cntr[1]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \sig_addr_posted_cntr[2]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of sig_coelsc_cmd_cmplt_reg_i_3 : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of sig_coelsc_decerr_reg_i_1 : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of sig_coelsc_interr_reg_i_1 : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of sig_coelsc_slverr_reg_i_1 : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \sig_dbeat_cntr[7]_i_4\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of sig_last_dbeat_i_5 : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of sig_m_valid_dup_i_3 : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of sig_next_cmd_cmplt_reg_i_3 : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \sig_sstrb_stop_mask[1]_i_1\ : label is "soft_lutpair63";
 begin
   \sig_addr_posted_cntr_reg[0]_0\ <= \^sig_addr_posted_cntr_reg[0]_0\;
   sig_data2addr_stop_req <= \^sig_data2addr_stop_req\;
@@ -20142,6 +20146,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_sfifo_autord is
     \sig_data_reg_out_reg[15]_0\ : in STD_LOGIC_VECTOR ( 15 downto 0 );
     sig_offset_fifo_data_out : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_sfifo_autord : entity is "axi_datamover_sfifo_autord";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_sfifo_autord;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_sfifo_autord is
@@ -20218,6 +20224,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_sf is
     \sig_data_reg_out_reg[15]\ : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_sf : entity is "axi_datamover_rd_sf";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_sf;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_sf is
@@ -20238,8 +20246,8 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_rd_sf is
   signal \sig_token_cntr[3]_i_2_n_0\ : STD_LOGIC;
   signal sig_token_cntr_reg : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of sig_ok_to_post_rd_addr_i_5 : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \sig_token_cntr[0]_i_1\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of sig_ok_to_post_rd_addr_i_5 : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \sig_token_cntr[0]_i_1\ : label is "soft_lutpair41";
 begin
   lsig_0ffset_cntr <= \^lsig_0ffset_cntr\;
   lsig_cmd_loaded <= \^lsig_cmd_loaded\;
@@ -20478,6 +20486,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover_mm2s_full_wrap is
     halt : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 59 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover_mm2s_full_wrap : entity is "axi_datamover_mm2s_full_wrap";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover_mm2s_full_wrap;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover_mm2s_full_wrap is
@@ -20905,6 +20915,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_datamover is
     halt : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 59 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_datamover : entity is "axi_datamover";
 end test_axi_dma_from_ps_to_pl_0_axi_datamover;
 
 architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0_axi_datamover is
@@ -21131,6 +21143,8 @@ entity test_axi_dma_from_ps_to_pl_0_axi_dma is
   attribute C_S_AXI_LITE_ADDR_WIDTH of test_axi_dma_from_ps_to_pl_0_axi_dma : entity is 10;
   attribute C_S_AXI_LITE_DATA_WIDTH : integer;
   attribute C_S_AXI_LITE_DATA_WIDTH of test_axi_dma_from_ps_to_pl_0_axi_dma : entity is 32;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of test_axi_dma_from_ps_to_pl_0_axi_dma : entity is "axi_dma";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of test_axi_dma_from_ps_to_pl_0_axi_dma : entity is "yes";
 end test_axi_dma_from_ps_to_pl_0_axi_dma;
@@ -21930,7 +21944,7 @@ entity test_axi_dma_from_ps_to_pl_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of test_axi_dma_from_ps_to_pl_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of test_axi_dma_from_ps_to_pl_0 : entity is "test_axi_dma_0_1,axi_dma,{}";
+  attribute CHECK_LICENSE_TYPE of test_axi_dma_from_ps_to_pl_0 : entity is "test_axi_dma_from_ps_to_pl_0,axi_dma,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of test_axi_dma_from_ps_to_pl_0 : entity is "yes";
   attribute x_core_info : string;
@@ -22073,7 +22087,7 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0 is
   attribute x_interface_parameter : string;
   attribute x_interface_parameter of axi_resetn : signal is "XIL_INTERFACENAME AXI_RESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of m_axi_mm2s_aclk : signal is "xilinx.com:signal:clock:1.0 M_AXI_MM2S_CLK CLK";
-  attribute x_interface_parameter of m_axi_mm2s_aclk : signal is "XIL_INTERFACENAME M_AXI_MM2S_CLK, ASSOCIATED_BUSIF M_AXI_MM2S:M_AXIS_MM2S:M_AXIS_CNTRL, ASSOCIATED_RESET mm2s_prmry_reset_out_n:mm2s_cntrl_reset_out_n, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of m_axi_mm2s_aclk : signal is "XIL_INTERFACENAME M_AXI_MM2S_CLK, ASSOCIATED_BUSIF M_AXI_MM2S:M_AXIS_MM2S:M_AXIS_CNTRL, ASSOCIATED_RESET mm2s_prmry_reset_out_n:mm2s_cntrl_reset_out_n, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of m_axi_mm2s_arready : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S ARREADY";
   attribute x_interface_info of m_axi_mm2s_arvalid : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S ARVALID";
   attribute x_interface_info of m_axi_mm2s_rlast : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S RLAST";
@@ -22087,12 +22101,12 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0 is
   attribute x_interface_info of mm2s_prmry_reset_out_n : signal is "xilinx.com:signal:reset:1.0 MM2S_PRMRY_RESET_OUT_N RST";
   attribute x_interface_parameter of mm2s_prmry_reset_out_n : signal is "XIL_INTERFACENAME MM2S_PRMRY_RESET_OUT_N, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of s_axi_lite_aclk : signal is "xilinx.com:signal:clock:1.0 S_AXI_LITE_ACLK CLK";
-  attribute x_interface_parameter of s_axi_lite_aclk : signal is "XIL_INTERFACENAME S_AXI_LITE_ACLK, ASSOCIATED_BUSIF S_AXI_LITE:M_AXI, ASSOCIATED_RESET axi_resetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axi_lite_aclk : signal is "XIL_INTERFACENAME S_AXI_LITE_ACLK, ASSOCIATED_BUSIF S_AXI_LITE:M_AXI, ASSOCIATED_RESET axi_resetn, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of s_axi_lite_arready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE ARREADY";
   attribute x_interface_info of s_axi_lite_arvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE ARVALID";
   attribute x_interface_info of s_axi_lite_awready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE AWREADY";
   attribute x_interface_info of s_axi_lite_awvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE AWVALID";
-  attribute x_interface_parameter of s_axi_lite_awvalid : signal is "XIL_INTERFACENAME S_AXI_LITE, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 10, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axi_lite_awvalid : signal is "XIL_INTERFACENAME S_AXI_LITE, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 250000000, ID_WIDTH 0, ADDR_WIDTH 10, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute x_interface_info of s_axi_lite_bready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE BREADY";
   attribute x_interface_info of s_axi_lite_bvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE BVALID";
   attribute x_interface_info of s_axi_lite_rready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE RREADY";
@@ -22100,7 +22114,7 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0 is
   attribute x_interface_info of s_axi_lite_wready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE WREADY";
   attribute x_interface_info of s_axi_lite_wvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE WVALID";
   attribute x_interface_info of m_axi_mm2s_araddr : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S ARADDR";
-  attribute x_interface_parameter of m_axi_mm2s_araddr : signal is "XIL_INTERFACENAME M_AXI_MM2S, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 16, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 16, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute x_interface_parameter of m_axi_mm2s_araddr : signal is "XIL_INTERFACENAME M_AXI_MM2S, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 16, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 250000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 16, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute x_interface_info of m_axi_mm2s_arburst : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S ARBURST";
   attribute x_interface_info of m_axi_mm2s_arcache : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S ARCACHE";
   attribute x_interface_info of m_axi_mm2s_arlen : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S ARLEN";
@@ -22109,7 +22123,7 @@ architecture STRUCTURE of test_axi_dma_from_ps_to_pl_0 is
   attribute x_interface_info of m_axi_mm2s_rdata : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S RDATA";
   attribute x_interface_info of m_axi_mm2s_rresp : signal is "xilinx.com:interface:aximm:1.0 M_AXI_MM2S RRESP";
   attribute x_interface_info of m_axis_mm2s_tdata : signal is "xilinx.com:interface:axis:1.0 M_AXIS_MM2S TDATA";
-  attribute x_interface_parameter of m_axis_mm2s_tdata : signal is "XIL_INTERFACENAME M_AXIS_MM2S, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0, HAS_BURST 0";
+  attribute x_interface_parameter of m_axis_mm2s_tdata : signal is "XIL_INTERFACENAME M_AXIS_MM2S, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 250000000, PHASE 0.0, CLK_DOMAIN test_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0, HAS_BURST 0";
   attribute x_interface_info of m_axis_mm2s_tkeep : signal is "xilinx.com:interface:axis:1.0 M_AXIS_MM2S TKEEP";
   attribute x_interface_info of s_axi_lite_araddr : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE ARADDR";
   attribute x_interface_info of s_axi_lite_awaddr : signal is "xilinx.com:interface:aximm:1.0 S_AXI_LITE AWADDR";

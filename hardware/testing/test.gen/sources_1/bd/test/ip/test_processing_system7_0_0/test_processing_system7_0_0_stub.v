@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-// Date        : Sat Dec  4 00:39:21 2021
+// Date        : Sun Dec  5 20:15:59 2021
 // Host        : mrac-PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top test_processing_system7_0_0 -prefix
-//               test_processing_system7_0_0_ test_processing_system7_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0_stub.v
 // Design      : test_processing_system7_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-3

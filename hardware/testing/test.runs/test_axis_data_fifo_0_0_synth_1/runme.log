@@ -10,5 +10,5 @@
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source test_axis_data_fifo_0_0.tcl -notrace
-INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP test_axis_data_fifo_0_0, cache-ID = f5db4e20eda51bd7.
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  5 13:52:32 2021...
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP test_axis_data_fifo_0_0, cache-ID = 7c4082aaf4105af2.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  5 20:16:25 2021...

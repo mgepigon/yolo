@@ -300,7 +300,7 @@
 						"WVALID": { "actual": "S00_AXI_wvalid"}
 					}
 				},
-				"/axis_data_fifo/M_AXIS": {
+				"/axis_data_fifo_in/M_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "s_axis_aclk"},
@@ -312,7 +312,7 @@
 						"TVALID": { "actual": "m_axis_tvalid"}
 					}
 				},
-				"/axis_data_fifo/S_AXIS": {
+				"/axis_data_fifo_in/S_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "s_axis_aclk"},
@@ -324,7 +324,7 @@
 						"TVALID": { "actual": "s_axis_tvalid"}
 					}
 				},
-				"/axis_data_fifo_0/M_AXIS": {
+				"/axis_data_fifo_out/M_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "s_axis_aclk"},
@@ -336,7 +336,7 @@
 						"TVALID": { "actual": "m_axis_tvalid"}
 					}
 				},
-				"/axis_data_fifo_0/S_AXIS": {
+				"/axis_data_fifo_out/S_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "s_axis_aclk"},

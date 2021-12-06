@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "test_conv2D_0_0_synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
@@ -93,7 +92,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib C:/Users/marc/Desktop/yolo/hardware/conv2D.v
-read_ip -quiet c:/Users/marc/Desktop/yolo/hardware/testing/test.srcs/sources_1/bd/test/ip/test_conv2D_0_0/test_conv2D_0_0.xci
+read_ip -quiet C:/Users/marc/Desktop/yolo/hardware/testing/test.srcs/sources_1/bd/test/ip/test_conv2D_0_0/test_conv2D_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

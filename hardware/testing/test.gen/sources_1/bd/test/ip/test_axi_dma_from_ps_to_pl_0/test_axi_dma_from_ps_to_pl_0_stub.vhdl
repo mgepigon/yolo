@@ -1,11 +1,11 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
--- Date        : Sat Dec  4 01:54:25 2021
+-- Date        : Sun Dec  5 20:16:23 2021
 -- Host        : mrac-PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top test_axi_dma_from_ps_to_pl_0 -prefix
---               test_axi_dma_from_ps_to_pl_0_ test_axi_dma_0_1_stub.vhdl
--- Design      : test_axi_dma_0_1
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axi_dma_from_ps_to_pl_0/test_axi_dma_from_ps_to_pl_0_stub.vhdl
+-- Design      : test_axi_dma_from_ps_to_pl_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-3
 -- --------------------------------------------------------------------------------

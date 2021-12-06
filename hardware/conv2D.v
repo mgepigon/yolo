@@ -5,7 +5,7 @@ module conv2D(
     input wire  M_AXIS_ACLK,
     input wire  M_AXIS_ARESETN,
     input wire  S_AXIS_ACLK,
-	input wire  S_AXIS_ARESETN,
+    input wire  S_AXIS_ARESETN,
     
     //master AXI interface - sends data back to DRAM
     output wire  M_AXIS_TVALID, // Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
@@ -68,25 +68,27 @@ module conv2D(
     
     //extra flags for indicating when things should happen / are happening
     wire TX, RX, RX_data, RX_last, systolic_advance, new_filt_data, arr_rst, new_data, zero_padding, TX_last;
+    //wire TX, RX, RX_data, RX_last, systolic_advance, new_filt_data, arr_rst, new_data, TX_last;
     assign RX = S_AXIS_TREADY && S_AXIS_TVALID;
-    assign TX = M_AXIS_TREADY && M_AXIS_TVALID && (row_count == 2); //internal flag: we transmitted a word to output stream
+    assign TX = M_AXIS_TREADY && M_AXIS_TVALID; //internal flag: we transmitted a word to output stream
+
     assign RX_data = RX && S_AXIS_TKEEP == 3; //internal flag: we recieved a word from input stream
     assign RX_last = RX && S_AXIS_TLAST;
     assign systolic_advance = zero_padding || arr_rst || new_data; //indicates when the systolic array should step forward
+    //assign systolic_advance = arr_rst || new_data; //indicates when the systolic array should step forward
     assign new_filt_data = (state == 0 || state == 1) && RX_data;
-    //assign arr_rst = (state == 0 && ~RX);
-    assign arr_rst = (state == 0 && ~RX) || S_AXIS_ARESETN;
+
+    assign arr_rst = (state == 0 && ~RX);
     assign new_data = (state == 2 || state == 3) && RX_data;
-    //TODO: change w/o row_count and add TX
     assign zero_padding = state == 4 && (row_count != 2); //pad a zero into array if we are in last state and are transmitting data as well
-    assign TX_last = TX_count == data_count / 3  - 2; // this is for full convolution
+    //assign TX_last = TX_count == 21; // this is for full convolution
+    assign TX_last = TX_count == data_count / 3  - 3; // this is for full convolution    
     
     //AXI interface control 
-    assign M_AXIS_TVALID = state == 4 || (state == 3 && S_AXIS_TVALID); //
+    assign M_AXIS_TVALID = (state == 4 && (row_count == 2)) || (state == 3 && S_AXIS_TVALID && (row_count == 2)); //
     assign M_AXIS_TKEEP = 3; //always on, since this design is guarenteed to transmit last DATA and TLAST on the same clock edge
     assign M_AXIS_TLAST = (state == 4) && TX_last;//if there is only one more transmission needed, assert last on that transmission
     assign S_AXIS_TREADY = M_AXIS_TREADY;//we are generally always ready, unless the next stage is not
-    
     
     //===========================================================================================================
     //filter loading: shift register that fills up in first state, and is stationary during systolic calculation
@@ -125,7 +127,7 @@ module conv2D(
     //also count data TX here
     reg [15:0] data[0:2][0:2];
     reg [31:0] data_count;
-    reg [31:0] row_count;
+    reg [1:0] row_count;
     reg [31:0] TX_count;
     
     always @(posedge S_AXIS_ACLK) begin
@@ -134,12 +136,12 @@ module conv2D(
             data_count <= data_count+1;
             //Reset & count rows
             if (row_count != 2) row_count <= row_count + 1;
-            if (row_count == 2) row_count <= 0;
+            else if (row_count == 2) row_count <= 0;
         end
         if (zero_padding) begin
             data[row_count][2] <= 0; //zero padding at end
             if (row_count != 2) row_count <= row_count + 1;
-            if (row_count == 2) row_count <= 0;
+            else if (row_count == 2) row_count <= 0;
         end
         if (arr_rst) begin
             data_count <= 0;
@@ -170,7 +172,11 @@ module conv2D(
     reg [15:0] products[0:2][0:2];
     reg [15:0] L0sums[0:2];
     
-    assign M_AXIS_TDATA = L0sums[0] + L0sums[1] + L0sums[2];
+    //TODO summation all
+    assign M_AXIS_TDATA = products[0][0] + products[0][1] + products[0][2] +
+                            products[1][0] + products[1][1] + products[1][2] +
+                                products[2][0] + products[2][1] + products[2][2];
+    //assign M_AXIS_TDATA = row_count;
     
     generate
         // perform product
@@ -183,13 +189,13 @@ module conv2D(
                 end
             end
         end
-        for(row=0; row<3; row=row+1) begin
-            always @(posedge S_AXIS_ACLK) begin
-                if (systolic_advance) begin
-                    L0sums[row] <= products[row][0] + products[row][1] + products[row][2];
-                end
-            end
-        end
+        // for(row=0; row<3; row=row+1) begin
+        //     always @(posedge S_AXIS_ACLK) begin
+        //         if (systolic_advance) begin
+        //             L0sums[row] <= products[row][0] + products[row][1] + products[row][2];
+        //         end
+        //     end
+        // end
         
     endgenerate
     
@@ -197,16 +203,11 @@ module conv2D(
     //rules for changing system state
     
     always @(posedge S_AXIS_ACLK) begin
-        if (arr_rst) begin
-            state <= 0;
-        end
-        else begin
         if (state == 0 && RX_data) state <= 1; //start loading to filter array after being in idle state
         if (state == 1 && RX_last) state <= 2; //when done loading to filter array, move to processing state
-        if (state == 2 && data_count == 10 && RX_data) state <= 3; //once first data conv has propegated through arithmetic, move to send&receive state
+        if (state == 2 && data_count == 9 && RX_data) state <= 3; //once first data conv has propegated through arithmetic, move to send&receive state
         if (state == 3 && RX_last) state <= 4; //once all data has been received, move to send-only state
         if (state == 4 && TX && TX_last) state <= 0; //once all results have been sent, return to idle state
-        end
     end
     
 endmodule

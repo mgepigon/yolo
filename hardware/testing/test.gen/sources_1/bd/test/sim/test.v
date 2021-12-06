@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-//Date        : Sun Dec  5 13:50:27 2021
+//Date        : Sun Dec  5 21:05:56 2021
 //Host        : mrac-PC running 64-bit major release  (build 9200)
 //Command     : generate_target test.bd
 //Design      : test
@@ -464,7 +464,7 @@ module test
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(rst_ps7_0_50M_interconnect_aresetn));
-  test_axis_data_fifo_0 axis_data_fifo
+  test_axis_data_fifo_0 axis_data_fifo_in
        (.m_axis_tdata(axis_data_fifo_M_AXIS_TDATA),
         .m_axis_tkeep(axis_data_fifo_M_AXIS_TKEEP),
         .m_axis_tlast(axis_data_fifo_M_AXIS_TLAST),
@@ -477,7 +477,7 @@ module test
         .s_axis_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
         .s_axis_tready(axi_dma_1_M_AXIS_MM2S_TREADY),
         .s_axis_tvalid(axi_dma_1_M_AXIS_MM2S_TVALID));
-  test_axis_data_fifo_0_0 axis_data_fifo_0
+  test_axis_data_fifo_0_0 axis_data_fifo_out
        (.m_axis_tdata(axis_data_fifo_0_M_AXIS_TDATA),
         .m_axis_tkeep(axis_data_fifo_0_M_AXIS_TKEEP),
         .m_axis_tlast(axis_data_fifo_0_M_AXIS_TLAST),

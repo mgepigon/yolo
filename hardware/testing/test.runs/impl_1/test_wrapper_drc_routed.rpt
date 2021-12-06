@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-| Date         : Sun Dec  5 13:56:13 2021
+| Date         : Sun Dec  5 16:01:52 2021
 | Host         : mrac-PC running 64-bit major release  (build 9200)
 | Command      : report_drc -file test_wrapper_drc_routed.rpt -pb test_wrapper_drc_routed.pb -rpx test_wrapper_drc_routed.rpx
 | Design       : test_wrapper
@@ -53,20 +53,20 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-15 net(s) have no routable loads. The problem bus(es) and/or net(s) are test_i/axi_smc_2/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/s00_nodes/s00_r_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/m00_nodes/m00_b_node/inst/mi_handler_m_sc_areset_pipe,
+15 net(s) have no routable loads. The problem bus(es) and/or net(s) are test_i/axi_smc_2/inst/s00_nodes/s00_w_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/axi_smc_2/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/s00_nodes/s00_aw_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/s00_nodes/s00_r_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/axi_smc_2/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/s00_nodes/s00_w_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/s00_nodes/s00_b_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/m00_nodes/m00_ar_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/axi_smc_2/inst/m00_nodes/m00_w_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe,
 test_i/axi_smc_2/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe,
-test_i/axi_smc_2/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe
-test_i/axi_smc_2/inst/m00_nodes/m00_ar_node/inst/mi_handler_m_sc_areset_pipe.
+test_i/axi_smc_2/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe,
+test_i/axi_smc_2/inst/s00_nodes/s00_aw_node/inst/mi_handler_m_sc_areset_pipe
+test_i/axi_smc_2/inst/s00_nodes/s00_b_node/inst/mi_handler_m_sc_areset_pipe.
 Related violations: <none>
 
 REQP-181#1 Advisory
