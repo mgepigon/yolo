@@ -13,38 +13,38 @@ source test_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/Xilinx/Vivado/2021.1/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1353.719 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1329.883 ; gain = 0.000
 Command: synth_design -top test_wrapper -part xc7z020clg400-3 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-3
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 63264
+INFO: [Synth 8-7075] Helper process launched with PID 13732
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'test_wrapper' [C:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/hdl/test_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'test' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:13]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_dma_from_pl_to_ps_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_dma_from_pl_to_ps_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_dma_from_pl_to_ps_0' (1#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_dma_from_pl_to_ps_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_dma_from_pl_to_ps_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_dma_from_pl_to_ps_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_dma_from_pl_to_ps_0' (1#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_dma_from_pl_to_ps_0_stub.v:6]
 WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'test_axi_dma_from_pl_to_ps_0' is unconnected for instance 'axi_dma_from_pl_to_ps' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:235]
 WARNING: [Synth 8-7071] port 's2mm_introut' of module 'test_axi_dma_from_pl_to_ps_0' is unconnected for instance 'axi_dma_from_pl_to_ps' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:235]
 WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'test_axi_dma_from_pl_to_ps_0' is unconnected for instance 'axi_dma_from_pl_to_ps' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:235]
 WARNING: [Synth 8-7023] instance 'axi_dma_from_pl_to_ps' of module 'test_axi_dma_from_pl_to_ps_0' has 43 connections declared, but only 40 given [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:235]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_dma_from_ps_to_pl_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_dma_from_ps_to_pl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_dma_from_ps_to_pl_0' (2#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_dma_from_ps_to_pl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_dma_from_ps_to_pl_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_dma_from_ps_to_pl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_dma_from_ps_to_pl_0' (2#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_dma_from_ps_to_pl_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'test_axi_dma_from_ps_to_pl_0' is unconnected for instance 'axi_dma_from_ps_to_pl' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:276]
 WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'test_axi_dma_from_ps_to_pl_0' is unconnected for instance 'axi_dma_from_ps_to_pl' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:276]
 WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'test_axi_dma_from_ps_to_pl_0' is unconnected for instance 'axi_dma_from_ps_to_pl' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:276]
 WARNING: [Synth 8-7023] instance 'axi_dma_from_ps_to_pl' of module 'test_axi_dma_from_ps_to_pl_0' has 40 connections declared, but only 37 given [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:276]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_smc_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_smc_0' (3#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_smc_1_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_smc_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_smc_1_0' (4#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_smc_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_smc_2_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_smc_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_smc_2_0' (5#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axi_smc_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_smc_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_smc_0' (3#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_smc_1_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_smc_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_smc_1_0' (4#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_smc_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_smc_2_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_smc_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_smc_2_0' (5#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axi_smc_2_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'test_axi_smc_2_0' is unconnected for instance 'axi_smc_2' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:386]
 WARNING: [Synth 8-7071] port 'M00_AXI_wstrb' of module 'test_axi_smc_2_0' is unconnected for instance 'axi_smc_2' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:386]
 WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'test_axi_smc_2_0' is unconnected for instance 'axi_smc_2' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:386]
@@ -63,14 +63,14 @@ WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'test_axi_smc_2_0' is un
 WARNING: [Synth 8-7071] port 'M02_AXI_arvalid' of module 'test_axi_smc_2_0' is unconnected for instance 'axi_smc_2' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:386]
 WARNING: [Synth 8-7071] port 'M02_AXI_rready' of module 'test_axi_smc_2_0' is unconnected for instance 'axi_smc_2' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:386]
 WARNING: [Synth 8-7023] instance 'axi_smc_2' of module 'test_axi_smc_2_0' has 97 connections declared, but only 80 given [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:386]
-INFO: [Synth 8-6157] synthesizing module 'test_axis_data_fifo_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axis_data_fifo_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axis_data_fifo_0' (6#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axis_data_fifo_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_axis_data_fifo_0_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axis_data_fifo_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axis_data_fifo_0_0' (7#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_axis_data_fifo_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_conv2D_0_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_conv2D_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_conv2D_0_0' (8#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_conv2D_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_processing_system7_0_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_processing_system7_0_0' (9#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axis_data_fifo_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axis_data_fifo_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axis_data_fifo_0' (6#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axis_data_fifo_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axis_data_fifo_0_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axis_data_fifo_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axis_data_fifo_0_0' (7#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_axis_data_fifo_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_channel_add_0_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_channel_add_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_channel_add_0_0' (8#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_channel_add_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_processing_system7_0_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_processing_system7_0_0' (9#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARREADY' of module 'test_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:508]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RLAST' of module 'test_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:508]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RVALID' of module 'test_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:508]
@@ -93,8 +93,8 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP2_WCOUNT' of module 'test_processing_syste
 WARNING: [Synth 8-7071] port 'S_AXI_HP2_RACOUNT' of module 'test_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:508]
 WARNING: [Synth 8-7071] port 'S_AXI_HP2_WACOUNT' of module 'test_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:508]
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'test_processing_system7_0_0' has 152 connections declared, but only 131 given [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:508]
-INFO: [Synth 8-6157] synthesizing module 'test_rst_ps7_0_50M_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_rst_ps7_0_50M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_rst_ps7_0_50M_0' (10#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-63600-mrac-PC/realtime/test_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_rst_ps7_0_50M_0' [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_rst_ps7_0_50M_0' (10#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/.Xil/Vivado-87704-mrac-PC/realtime/test_rst_ps7_0_50M_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'test_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:640]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'test_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:640]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'test_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:640]
@@ -102,18 +102,18 @@ WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'test_rst_ps7_0_50M_0
 INFO: [Synth 8-6155] done synthesizing module 'test' (11#1) [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/synth/test.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'test_wrapper' (12#1) [C:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/hdl/test_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1329.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1329.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1329.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1329.883 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -128,34 +128,34 @@ Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1
 Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axi_smc_1_0/test_axi_smc_1_0/test_axi_smc_1_0_in_context.xdc] for cell 'test_i/axi_smc_1'
 Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axi_smc_2_0/test_axi_smc_2_0/test_axi_smc_2_0_in_context.xdc] for cell 'test_i/axi_smc_2'
 Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axi_smc_2_0/test_axi_smc_2_0/test_axi_smc_2_0_in_context.xdc] for cell 'test_i/axi_smc_2'
-Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0/test_axis_data_fifo_0/test_axis_data_fifo_0_in_context.xdc] for cell 'test_i/axis_data_fifo_in'
-Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0/test_axis_data_fifo_0/test_axis_data_fifo_0_in_context.xdc] for cell 'test_i/axis_data_fifo_in'
-Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0_0/test_axis_data_fifo_0_0/test_axis_data_fifo_0_in_context.xdc] for cell 'test_i/axis_data_fifo_out'
-Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0_0/test_axis_data_fifo_0_0/test_axis_data_fifo_0_in_context.xdc] for cell 'test_i/axis_data_fifo_out'
+Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0/test_axis_data_fifo_0/test_axis_data_fifo_0_0_in_context.xdc] for cell 'test_i/axis_data_fifo_in'
+Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0/test_axis_data_fifo_0/test_axis_data_fifo_0_0_in_context.xdc] for cell 'test_i/axis_data_fifo_in'
+Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0_0/test_axis_data_fifo_0_0/test_axis_data_fifo_0_0_in_context.xdc] for cell 'test_i/axis_data_fifo_out'
+Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_axis_data_fifo_0_0/test_axis_data_fifo_0_0/test_axis_data_fifo_0_0_in_context.xdc] for cell 'test_i/axis_data_fifo_out'
 Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0/test_processing_system7_0_0_in_context.xdc] for cell 'test_i/processing_system7_0'
 Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_processing_system7_0_0/test_processing_system7_0_0/test_processing_system7_0_0_in_context.xdc] for cell 'test_i/processing_system7_0'
-Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_rst_ps7_0_50M_0/test_rst_ps7_0_50M_0/test_rst_ps7_0_50M_0_in_context.xdc] for cell 'test_i/rst_ps7_0_50M'
-Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_rst_ps7_0_50M_0/test_rst_ps7_0_50M_0/test_rst_ps7_0_50M_0_in_context.xdc] for cell 'test_i/rst_ps7_0_50M'
-Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_conv2D_0_0/test_conv2D_0_0/test_conv2D_0_0_in_context.xdc] for cell 'test_i/conv2D_0'
-Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_conv2D_0_0/test_conv2D_0_0/test_conv2D_0_0_in_context.xdc] for cell 'test_i/conv2D_0'
+Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_rst_ps7_0_50M_0/test_rst_ps7_0_50M_0/test_proc_sys_reset_0_0_in_context.xdc] for cell 'test_i/rst_ps7_0_50M'
+Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_rst_ps7_0_50M_0/test_rst_ps7_0_50M_0/test_proc_sys_reset_0_0_in_context.xdc] for cell 'test_i/rst_ps7_0_50M'
+Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_channel_add_0_0/test_channel_add_0_0/test_channel_add_0_0_in_context.xdc] for cell 'test_i/channel_add_0'
+Finished Parsing XDC File [c:/Users/marc/Desktop/yolo/hardware/testing/test.gen/sources_1/bd/test/ip/test_channel_add_0_0/test_channel_add_0_0/test_channel_add_0_0_in_context.xdc] for cell 'test_i/channel_add_0'
 Parsing XDC File [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1351.590 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1351.590 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1351.590 ; gain = 21.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1351.590 ; gain = 21.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -430,12 +430,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for test_i/axis_data_fifo_in. (constr
 Applied set_property KEEP_HIERARCHY = SOFT for test_i/axis_data_fifo_out. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for test_i/processing_system7_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for test_i/rst_ps7_0_50M. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for test_i/conv2D_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for test_i/channel_add_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1351.590 ; gain = 21.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1351.590 ; gain = 21.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -457,19 +457,19 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1353.719 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1351.590 ; gain = 21.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1399.637 ; gain = 45.918
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1402.273 ; gain = 72.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1419.262 ; gain = 65.543
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1421.895 ; gain = 92.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -481,19 +481,19 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1424.043 ; gain = 70.324
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1428.664 ; gain = 98.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1424.043 ; gain = 70.324
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1428.664 ; gain = 98.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1424.043 ; gain = 70.324
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1428.664 ; gain = 98.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -510,7 +510,7 @@ Report BlackBoxes:
 |5     |test_axi_smc_2_0             |         1|
 |6     |test_axis_data_fifo_0        |         1|
 |7     |test_axis_data_fifo_0_0      |         1|
-|8     |test_conv2D_0_0              |         1|
+|8     |test_channel_add_0_0         |         1|
 |9     |test_processing_system7_0_0  |         1|
 |10    |test_rst_ps7_0_50M_0         |         1|
 +------+-----------------------------+----------+
@@ -526,28 +526,30 @@ Report Cell Usage:
 |5     |test_axi_smc_2             |     1|
 |6     |test_axis_data_fifo        |     1|
 |7     |test_axis_data_fifo_0      |     1|
-|8     |test_conv2D_0              |     1|
+|8     |test_channel_add_0         |     1|
 |9     |test_processing_system7_0  |     1|
 |10    |test_rst_ps7_0_50M         |     1|
 +------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1424.043 ; gain = 70.324
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1428.664 ; gain = 98.781
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 1424.043 ; gain = 70.324
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1424.043 ; gain = 70.324
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1428.664 ; gain = 77.074
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1428.664 ; gain = 98.781
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1424.043 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1428.664 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1454.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1454.707 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 3de1501d
+Synth Design complete, checksum: b64bf36a
 INFO: [Common 17-83] Releasing license: Synthesis
 39 Infos, 52 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 1460.855 ; gain = 107.137
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 1460.676 ; gain = 130.793
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
 INFO: [Common 17-1381] The checkpoint 'C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/test_wrapper.dcp' has been generated.
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  5 21:08:24 2021...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  9 08:57:26 2021...

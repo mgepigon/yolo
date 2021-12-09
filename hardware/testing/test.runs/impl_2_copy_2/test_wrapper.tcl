@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_2_copy_2" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_2_copy_2" START { ROLLUP_1 }
@@ -123,6 +124,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param general.maxThreads 32
   set_param chipscope.maxJobs 3
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-3
@@ -140,7 +142,9 @@ OPTRACE "add files" START { }
   add_files -quiet C:/Users/marc/Desktop/yolo/hardware/testing/test.runs/synth_1_copy_1/test_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
+  read_ip -quiet c:/Users/marc/Desktop/yolo/hardware/testing/test.srcs/sources_1/ip/float_add/float_add.xci
   add_files C:/Users/marc/Desktop/yolo/hardware/testing/test.srcs/sources_1/bd/test/test.bd
+  read_ip -quiet C:/Users/marc/Desktop/yolo/hardware/testing/test.srcs/sources_1/ip/float_mult/float_mult.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
 OPTRACE "read constraints: implementation" END { }

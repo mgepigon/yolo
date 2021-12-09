@@ -374,7 +374,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.FREQ_HZ">250000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.FREQ_HZ">50000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1003,7 +1003,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.FREQ_HZ">250000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.FREQ_HZ">50000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1285,7 +1285,7 @@
           <spirit:name>FREQ_HZ</spirit:name>
           <spirit:displayName>aclk frequency</spirit:displayName>
           <spirit:description>aclk frequency</spirit:description>
-          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.FREQ_HZ" spirit:minimum="1" spirit:maximum="1000000000" spirit:rangeType="long">250000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.FREQ_HZ" spirit:minimum="1" spirit:maximum="1000000000" spirit:rangeType="long">50000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
@@ -1407,11 +1407,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Dec 04 17:52:53 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 09 14:51:38 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c64ccf9d</spirit:value>
+            <spirit:value>9:36ff5483</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1422,7 +1422,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c64ccf9d</spirit:value>
+            <spirit:value>9:36ff5483</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1438,11 +1438,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 06 05:06:07 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 09 16:54:36 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c64ccf9d</spirit:value>
+            <spirit:value>9:36ff5483</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1461,11 +1461,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Dec 04 17:52:53 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 09 14:51:38 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:89ae7b28</spirit:value>
+            <spirit:value>9:250cb7c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1481,11 +1481,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 06 05:06:07 UTC 2021</spirit:value>
+            <spirit:value>Thu Dec 09 16:54:36 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:89ae7b28</spirit:value>
+            <spirit:value>9:250cb7c0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

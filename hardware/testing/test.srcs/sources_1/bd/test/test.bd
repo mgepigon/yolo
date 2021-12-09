@@ -20,7 +20,7 @@
       "axis_data_fifo_out": "",
       "processing_system7_0": "",
       "rst_ps7_0_50M": "",
-      "conv2D_0": ""
+      "channel_add_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -103,9 +103,6 @@
           "c_include_sg": {
             "value": "0"
           },
-          "c_s_axis_s2mm_tdata_width": {
-            "value": "16"
-          },
           "c_sg_length_width": {
             "value": "26"
           }
@@ -149,7 +146,7 @@
             "value": "0"
           },
           "c_m_axis_mm2s_tdata_width": {
-            "value": "16"
+            "value": "32"
           },
           "c_sg_length_width": {
             "value": "26"
@@ -406,6 +403,9 @@
         "parameters": {
           "FIFO_DEPTH": {
             "value": "512"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "4"
           }
         }
       },
@@ -442,7 +442,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "250.000000"
+            "value": "50.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -496,7 +496,7 @@
             "value": "111.111115"
           },
           "PCW_CLK0_FREQ": {
-            "value": "250000000"
+            "value": "50000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -511,7 +511,7 @@
             "value": "0x1FFFFFFF"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "250"
+            "value": "50"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
@@ -684,14 +684,14 @@
         "xci_path": "ip\\test_rst_ps7_0_50M_0\\test_rst_ps7_0_50M_0.xci",
         "inst_hier_path": "rst_ps7_0_50M"
       },
-      "conv2D_0": {
-        "vlnv": "xilinx.com:module_ref:conv2D:1.0",
-        "xci_name": "test_conv2D_0_0",
-        "xci_path": "ip\\test_conv2D_0_0\\test_conv2D_0_0.xci",
-        "inst_hier_path": "conv2D_0",
+      "channel_add_0": {
+        "vlnv": "xilinx.com:module_ref:channel_add:1.0",
+        "xci_name": "test_channel_add_0_0",
+        "xci_path": "ip\\test_channel_add_0_0\\test_channel_add_0_0.xci",
+        "inst_hier_path": "channel_add_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "conv2D",
+          "ref_name": "channel_add",
           "boundary_crc": "0x0"
         },
         "interface_ports": {
@@ -701,7 +701,7 @@
             "vlnv": "xilinx.com:interface:axis_rtl:1.0",
             "parameters": {
               "TDATA_NUM_BYTES": {
-                "value": "2",
+                "value": "4",
                 "value_src": "constant"
               },
               "TDEST_WIDTH": {
@@ -733,7 +733,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "250000000",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -745,7 +745,7 @@
               "TDATA": {
                 "physical_name": "M_AXIS_TDATA",
                 "direction": "O",
-                "left": "15",
+                "left": "31",
                 "right": "0"
               },
               "TKEEP": {
@@ -774,7 +774,7 @@
             "vlnv": "xilinx.com:interface:axis_rtl:1.0",
             "parameters": {
               "TDATA_NUM_BYTES": {
-                "value": "2",
+                "value": "4",
                 "value_src": "constant"
               },
               "TDEST_WIDTH": {
@@ -806,7 +806,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "250000000",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -818,7 +818,7 @@
               "TDATA": {
                 "physical_name": "S_AXIS_TDATA",
                 "direction": "I",
-                "left": "15",
+                "left": "31",
                 "right": "0"
               },
               "TKEEP": {
@@ -856,7 +856,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "250000000",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -888,7 +888,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "250000000",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -959,15 +959,15 @@
           "axis_data_fifo_out/M_AXIS"
         ]
       },
-      "axis_data_fifo_M_AXIS": {
+      "axis_data_fifo_in_M_AXIS": {
         "interface_ports": [
-          "axis_data_fifo_in/M_AXIS",
-          "conv2D_0/S_AXIS"
+          "channel_add_0/S_AXIS",
+          "axis_data_fifo_in/M_AXIS"
         ]
       },
-      "conv2D_0_M_AXIS": {
+      "channel_add_0_M_AXIS": {
         "interface_ports": [
-          "conv2D_0/M_AXIS",
+          "channel_add_0/M_AXIS",
           "axis_data_fifo_out/S_AXIS"
         ]
       },
@@ -1007,8 +1007,8 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "processing_system7_0/S_AXI_HP2_ACLK",
           "rst_ps7_0_50M/slowest_sync_clk",
-          "conv2D_0/M_AXIS_ACLK",
-          "conv2D_0/S_AXIS_ACLK"
+          "channel_add_0/M_AXIS_ACLK",
+          "channel_add_0/S_AXIS_ACLK"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1023,8 +1023,8 @@
           "axi_smc_2/aresetn",
           "axis_data_fifo_in/s_axis_aresetn",
           "axis_data_fifo_out/s_axis_aresetn",
-          "conv2D_0/M_AXIS_ARESETN",
-          "conv2D_0/S_AXIS_ARESETN"
+          "channel_add_0/M_AXIS_ARESETN",
+          "channel_add_0/S_AXIS_ARESETN"
         ]
       },
       "rst_ps7_0_50M_peripheral_aresetn": {

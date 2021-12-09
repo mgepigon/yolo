@@ -348,7 +348,7 @@
 						"TVALID": { "actual": "s_axis_tvalid"}
 					}
 				},
-				"/conv2D_0/M_AXIS": {
+				"/channel_add_0/M_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "M_AXIS_ACLK"},
@@ -360,7 +360,7 @@
 						"TVALID": { "actual": "M_AXIS_TVALID"}
 					}
 				},
-				"/conv2D_0/S_AXIS": {
+				"/channel_add_0/S_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "S_AXIS_ACLK"},

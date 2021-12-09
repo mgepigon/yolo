@@ -1,5 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../test.gen/sources_1/bd/test/ipshared/80cc/hdl/verilog" --include "../../../../test.gen/sources_1/bd/test/ipshared/22b9/hdl/verilog" --include "../../../../test.gen/sources_1/bd/test/ipshared/ec67/hdl" --include "../../../../test.gen/sources_1/bd/test/ipshared/8713/hdl" --include "../../../../test.gen/sources_1/bd/test/ipshared/f42d/hdl" --include "D:/Programs/Xilinx/Vivado/2021.1/data/xilinx_vip/include" \
+"../../../../test.gen/sources_1/ip/float_mult/sim/float_mult.v" \
+"../../../../test.gen/sources_1/ip/float_add/sim/float_add.v" \
 "../../../../../conv2D.v" \
 "../../../../test.ip_user_files/bd/test/ip/test_axi_smc_0/bd_0/sim/bd_0eb6.v" \
 "../../../../test.ip_user_files/bd/test/ip/test_axi_smc_0/bd_0/ip/ip_0/sim/bd_0eb6_one_0.v" \

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1_copy_1" LaunchPart="xc7z020clg400-3" LaunchTime="1638767181" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1_copy_1" LaunchPart="xc7z020clg400-3" LaunchTime="1639068902" LaunchWriteIncrSynthDcp="true">
   <File Type="PA-TCL" Name="test_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="test_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="test_wrapper_reports.tcl"/>
@@ -11,7 +11,14 @@
   <File Type="VDS-TIMING-PB" Name="test_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../conv2D.v">
+    <File Path="$PSRCDIR/sources_1/ip/float_add/float_add.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../channel.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -27,6 +34,38 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/test/hdl/test_wrapper.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/float_mult/float_mult.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../conv2D.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../relu.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../top.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -59,20 +98,12 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2021">
-      <Desc>Trades off Performance and Area for better Runtime.</Desc>
-    </StratHandle>
+    <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design">
-      <Option Id="FsmExtraction">0</Option>
-      <Option Id="Directive">0</Option>
       <Option Id="FlattenHierarchy">1</Option>
+      <Option Id="Directive">0</Option>
+      <Option Id="FsmExtraction">0</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="test_axi_dma_from_ps_to_pl_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_axi_dma_from_pl_to_ps_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_axis_data_fifo_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_rst_ps7_0_50M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_axis_data_fifo_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="test_conv2D_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="test_channel_add_0_0"/>
 </GenRun>

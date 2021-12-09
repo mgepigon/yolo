@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
--- Date        : Sun Dec  5 20:16:49 2021
+-- Date        : Sun Dec  5 18:15:51 2021
 -- Host        : mrac-PC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top test_axi_smc_2_0 -prefix
 --               test_axi_smc_2_0_ test_axi_smc_2_0_stub.vhdl

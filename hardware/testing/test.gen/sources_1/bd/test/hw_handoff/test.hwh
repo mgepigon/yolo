@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Dec  5 21:06:10 2021" VIVADOVERSION="2021.1.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec  9 08:54:47 2021" VIVADOVERSION="2021.1.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="test" PACKAGE="clg400" SPEEDGRADE="-3"/>
 
@@ -1008,7 +1008,7 @@
         <PARAMETER NAME="C_S2MM_BURST_SIZE" VALUE="16"/>
         <PARAMETER NAME="C_M_AXI_S2MM_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_M_AXI_S2MM_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_S_AXIS_S2MM_TDATA_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="C_S_AXIS_S2MM_TDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_INCLUDE_S2MM_DRE" VALUE="0"/>
         <PARAMETER NAME="C_INCREASE_THROUGHPUT" VALUE="0"/>
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
@@ -1031,7 +1031,7 @@
         <PARAMETER NAME="c_include_s2mm" VALUE="1"/>
         <PARAMETER NAME="c_sg_use_stsapp_length" VALUE="0"/>
         <PARAMETER NAME="c_m_axi_s2mm_data_width" VALUE="32"/>
-        <PARAMETER NAME="c_s_axis_s2mm_tdata_width" VALUE="16"/>
+        <PARAMETER NAME="c_s_axis_s2mm_tdata_width" VALUE="32"/>
         <PARAMETER NAME="c_include_s2mm_dre" VALUE="0"/>
         <PARAMETER NAME="c_include_s2mm_sf" VALUE="1"/>
         <PARAMETER NAME="c_s2mm_burst_size" VALUE="16"/>
@@ -1043,12 +1043,12 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x4040FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -1219,12 +1219,12 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s2mm_prmry_reset_out_n" POLARITY="ACTIVE_LOW" SIGIS="rst"/>
-        <PORT DIR="I" LEFT="15" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axis_s2mm_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axis_data_fifo_out" PORT="m_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axis_s2mm_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tkeep">
+        <PORT DIR="I" LEFT="3" NAME="s_axis_s2mm_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tkeep">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axis_data_fifo_out" PORT="m_axis_tkeep"/>
           </CONNECTIONS>
@@ -1250,7 +1250,7 @@
         <BUSINTERFACE BUSNAME="axi_smc_2_M00_AXI" DATAWIDTH="32" NAME="S_AXI_LITE" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="10"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -1303,7 +1303,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="16"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -1350,7 +1350,7 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axis_data_fifo_out_M_AXIS" NAME="S_AXIS_S2MM" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -1358,7 +1358,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -2221,7 +2221,7 @@
         <PARAMETER NAME="C_MM2S_BURST_SIZE" VALUE="16"/>
         <PARAMETER NAME="C_M_AXI_MM2S_ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_M_AXI_MM2S_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_M_AXIS_MM2S_TDATA_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="C_M_AXIS_MM2S_TDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_INCLUDE_MM2S_DRE" VALUE="0"/>
         <PARAMETER NAME="C_INCLUDE_S2MM" VALUE="0"/>
         <PARAMETER NAME="C_INCLUDE_S2MM_SF" VALUE="1"/>
@@ -2244,7 +2244,7 @@
         <PARAMETER NAME="c_micro_dma" VALUE="0"/>
         <PARAMETER NAME="c_include_mm2s" VALUE="1"/>
         <PARAMETER NAME="c_m_axi_mm2s_data_width" VALUE="32"/>
-        <PARAMETER NAME="c_m_axis_mm2s_tdata_width" VALUE="16"/>
+        <PARAMETER NAME="c_m_axis_mm2s_tdata_width" VALUE="32"/>
         <PARAMETER NAME="c_include_mm2s_dre" VALUE="0"/>
         <PARAMETER NAME="c_include_mm2s_sf" VALUE="1"/>
         <PARAMETER NAME="c_mm2s_burst_size" VALUE="16"/>
@@ -2263,12 +2263,12 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x4041FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="m_axi_mm2s_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="m_axi_mm2s_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -2424,12 +2424,12 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="mm2s_prmry_reset_out_n" POLARITY="ACTIVE_LOW" SIGIS="rst"/>
-        <PORT DIR="O" LEFT="15" NAME="m_axis_mm2s_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tdata">
+        <PORT DIR="O" LEFT="31" NAME="m_axis_mm2s_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axis_data_fifo_in" PORT="s_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_axis_mm2s_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tkeep">
+        <PORT DIR="O" LEFT="3" NAME="m_axis_mm2s_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tkeep">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axis_data_fifo_in" PORT="s_axis_tkeep"/>
           </CONNECTIONS>
@@ -2455,7 +2455,7 @@
         <BUSINTERFACE BUSNAME="axi_smc_2_M01_AXI" DATAWIDTH="32" NAME="S_AXI_LITE" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="10"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -2508,7 +2508,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="16"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -2552,7 +2552,7 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_dma_from_ps_to_pl_M_AXIS_MM2S" NAME="M_AXIS_MM2S" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -2560,7 +2560,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -2598,7 +2598,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -2785,7 +2785,7 @@
         <BUSINTERFACE BUSNAME="axi_dma_from_pl_to_ps_M_AXI_S2MM" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -2838,7 +2838,7 @@
         <BUSINTERFACE BUSNAME="axi_smc_M00_AXI" DATAWIDTH="64" NAME="M00_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -2906,7 +2906,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -3063,7 +3063,7 @@
         <BUSINTERFACE BUSNAME="axi_dma_from_ps_to_pl_M_AXI_MM2S" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3113,7 +3113,7 @@
         <BUSINTERFACE BUSNAME="axi_smc_1_M00_AXI" DATAWIDTH="64" NAME="M00_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3178,7 +3178,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -3568,7 +3568,7 @@
         <BUSINTERFACE BUSNAME="processing_system7_0_M_AXI_GP0" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="12"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3641,7 +3641,7 @@
         <BUSINTERFACE BUSNAME="axi_smc_2_M00_AXI" DATAWIDTH="32" NAME="M00_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="10"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3695,7 +3695,7 @@
         <BUSINTERFACE BUSNAME="axi_smc_2_M01_AXI" DATAWIDTH="32" NAME="M01_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="10"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3749,7 +3749,7 @@
         <BUSINTERFACE BUSNAME="__NOC__" DATAWIDTH="32" NAME="M02_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="9"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -3808,7 +3808,7 @@
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TUSER_WIDTH" VALUE="1"/>
@@ -3823,7 +3823,7 @@
         <PARAMETER NAME="C_USE_ADV_FEATURES" VALUE="825241648"/>
         <PARAMETER NAME="C_PROG_EMPTY_THRESH" VALUE="5"/>
         <PARAMETER NAME="C_PROG_FULL_THRESH" VALUE="11"/>
-        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
         <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
         <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
         <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -3856,7 +3856,7 @@
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -3871,12 +3871,12 @@
             <CONNECTION INSTANCE="axi_dma_from_ps_to_pl" PORT="m_axis_mm2s_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_from_ps_to_pl" PORT="m_axis_mm2s_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tkeep">
+        <PORT DIR="I" LEFT="3" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_ps_to_pl_m_axis_mm2s_tkeep">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_from_ps_to_pl" PORT="m_axis_mm2s_tkeep"/>
           </CONNECTIONS>
@@ -3888,33 +3888,33 @@
         </PORT>
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_TVALID"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_TVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_TREADY"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tdata">
+        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_TDATA"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tkeep">
+        <PORT DIR="O" LEFT="3" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tkeep">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_TKEEP"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_TKEEP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_TLAST"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_TLAST"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axi_dma_from_ps_to_pl_M_AXIS_MM2S" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -3922,7 +3922,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -3936,7 +3936,7 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axis_data_fifo_in_M_AXIS" NAME="M_AXIS" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -3944,7 +3944,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -3965,7 +3965,7 @@
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TUSER_WIDTH" VALUE="1"/>
@@ -3980,7 +3980,7 @@
         <PARAMETER NAME="C_USE_ADV_FEATURES" VALUE="825241648"/>
         <PARAMETER NAME="C_PROG_EMPTY_THRESH" VALUE="5"/>
         <PARAMETER NAME="C_PROG_FULL_THRESH" VALUE="11"/>
-        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
         <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
         <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
         <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -4013,34 +4013,34 @@
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_TVALID"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_TVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_TREADY"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tdata">
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_TDATA"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_TDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tkeep">
+        <PORT DIR="I" LEFT="3" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tkeep">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_TKEEP"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_TKEEP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_TLAST"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_TLAST"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tvalid">
@@ -4053,12 +4053,12 @@
             <CONNECTION INSTANCE="axi_dma_from_pl_to_ps" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tdata">
+        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_from_pl_to_ps" PORT="s_axis_s2mm_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tkeep">
+        <PORT DIR="O" LEFT="3" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_from_pl_to_ps_s_axis_s2mm_tkeep">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_from_pl_to_ps" PORT="s_axis_s2mm_tkeep"/>
           </CONNECTIONS>
@@ -4070,8 +4070,8 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="conv2D_0_M_AXIS" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+        <BUSINTERFACE BUSNAME="channel_add_0_M_AXIS" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -4079,7 +4079,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -4093,7 +4093,7 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axis_data_fifo_out_M_AXIS" NAME="M_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -4101,7 +4101,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -4116,14 +4116,14 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/conv2D_0" HWVERSION="1.0" INSTANCE="conv2D_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="conv2D" VLNV="xilinx.com:module_ref:conv2D:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/channel_add_0" HWVERSION="1.0" INSTANCE="channel_add_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="channel_add" VLNV="xilinx.com:module_ref:channel_add:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="test_conv2D_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="test_channel_add_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="M_AXIS_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="M_AXIS_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -4133,7 +4133,7 @@
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="interconnect_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="S_AXIS_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="S_AXIS_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -4148,7 +4148,7 @@
             <CONNECTION INSTANCE="axis_data_fifo_out" PORT="s_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="M_AXIS_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tdata">
+        <PORT DIR="O" LEFT="31" NAME="M_AXIS_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_out_s_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axis_data_fifo_out" PORT="s_axis_tdata"/>
           </CONNECTIONS>
@@ -4173,7 +4173,7 @@
             <CONNECTION INSTANCE="axis_data_fifo_in" PORT="m_axis_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="S_AXIS_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tdata">
+        <PORT DIR="I" LEFT="31" NAME="S_AXIS_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="axis_data_fifo_in_m_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axis_data_fifo_in" PORT="m_axis_tdata"/>
           </CONNECTIONS>
@@ -4195,8 +4195,8 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="conv2D_0_M_AXIS" NAME="M_AXIS" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+        <BUSINTERFACE BUSNAME="channel_add_0_M_AXIS" NAME="M_AXIS" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -4204,7 +4204,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -4218,7 +4218,7 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axis_data_fifo_in_M_AXIS" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -4226,7 +4226,7 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="test_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
@@ -4431,7 +4431,7 @@
         <PARAMETER NAME="PCW_TTC1_CLK2_PERIPHERAL_FREQMHZ" VALUE="133.333333"/>
         <PARAMETER NAME="PCW_PCAP_PERIPHERAL_FREQMHZ" VALUE="200"/>
         <PARAMETER NAME="PCW_TPIU_PERIPHERAL_FREQMHZ" VALUE="200"/>
-        <PARAMETER NAME="PCW_FPGA0_PERIPHERAL_FREQMHZ" VALUE="250"/>
+        <PARAMETER NAME="PCW_FPGA0_PERIPHERAL_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_FPGA1_PERIPHERAL_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_FPGA2_PERIPHERAL_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_FPGA3_PERIPHERAL_FREQMHZ" VALUE="50"/>
@@ -4455,7 +4455,7 @@
         <PARAMETER NAME="PCW_ACT_TTC_PERIPHERAL_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_ACT_PCAP_PERIPHERAL_FREQMHZ" VALUE="200.000000"/>
         <PARAMETER NAME="PCW_ACT_TPIU_PERIPHERAL_FREQMHZ" VALUE="200.000000"/>
-        <PARAMETER NAME="PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ" VALUE="250.000000"/>
+        <PARAMETER NAME="PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ" VALUE="50.000000"/>
         <PARAMETER NAME="PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ" VALUE="10.000000"/>
         <PARAMETER NAME="PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ" VALUE="10.000000"/>
         <PARAMETER NAME="PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ" VALUE="10.000000"/>
@@ -4465,7 +4465,7 @@
         <PARAMETER NAME="PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ" VALUE="111.111115"/>
         <PARAMETER NAME="PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ" VALUE="111.111115"/>
         <PARAMETER NAME="PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ" VALUE="111.111115"/>
-        <PARAMETER NAME="PCW_CLK0_FREQ" VALUE="250000000"/>
+        <PARAMETER NAME="PCW_CLK0_FREQ" VALUE="50000000"/>
         <PARAMETER NAME="PCW_CLK1_FREQ" VALUE="10000000"/>
         <PARAMETER NAME="PCW_CLK2_FREQ" VALUE="10000000"/>
         <PARAMETER NAME="PCW_CLK3_FREQ" VALUE="10000000"/>
@@ -4479,11 +4479,11 @@
         <PARAMETER NAME="PCW_SPI_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_CAN_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_CAN_PERIPHERAL_DIVISOR1" VALUE="1"/>
-        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR0" VALUE="4"/>
+        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR0" VALUE="8"/>
         <PARAMETER NAME="PCW_FCLK1_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK2_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK3_PERIPHERAL_DIVISOR0" VALUE="1"/>
-        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR1" VALUE="2"/>
+        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR1" VALUE="5"/>
         <PARAMETER NAME="PCW_FCLK1_PERIPHERAL_DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK2_PERIPHERAL_DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK3_PERIPHERAL_DIVISOR1" VALUE="1"/>
@@ -4549,14 +4549,14 @@
         <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP2" VALUE="1"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP3" VALUE="0"/>
-        <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="250"/>
+        <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_M_AXI_GP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_GP0_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_GP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_ACP_FREQMHZ" VALUE="10"/>
-        <PARAMETER NAME="PCW_S_AXI_HP0_FREQMHZ" VALUE="250"/>
+        <PARAMETER NAME="PCW_S_AXI_HP0_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_S_AXI_HP1_FREQMHZ" VALUE="10"/>
-        <PARAMETER NAME="PCW_S_AXI_HP2_FREQMHZ" VALUE="250"/>
+        <PARAMETER NAME="PCW_S_AXI_HP2_FREQMHZ" VALUE="50"/>
         <PARAMETER NAME="PCW_S_AXI_HP3_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_USE_DMA0" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_DMA1" VALUE="0"/>
@@ -5320,7 +5320,7 @@
             <CONNECTION INSTANCE="axi_smc_2" PORT="S00_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="M_AXI_GP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="M_AXI_GP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -5411,7 +5411,7 @@
         <PORT DIR="O" LEFT="7" NAME="S_AXI_HP0_WCOUNT" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="S_AXI_HP0_RACOUNT" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="5" NAME="S_AXI_HP0_WACOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="S_AXI_HP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="S_AXI_HP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -5536,7 +5536,7 @@
         <PORT DIR="O" LEFT="7" NAME="S_AXI_HP2_WCOUNT" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="S_AXI_HP2_RACOUNT" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="5" NAME="S_AXI_HP2_WACOUNT" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="S_AXI_HP2_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="S_AXI_HP2_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -5610,7 +5610,7 @@
         <PORT DIR="I" LEFT="5" NAME="S_AXI_HP2_WID" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="63" NAME="S_AXI_HP2_WDATA" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="7" NAME="S_AXI_HP2_WSTRB" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="250000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_from_pl_to_ps" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="axi_dma_from_pl_to_ps" PORT="s_axi_lite_aclk"/>
@@ -5625,8 +5625,8 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP2_ACLK"/>
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_ACLK"/>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_ACLK"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_ACLK"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_ACLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -5811,7 +5811,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="12"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -5883,7 +5883,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="6"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -5956,7 +5956,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="64"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="250000000"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="50000000"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="6"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -6054,7 +6054,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="250000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -6075,8 +6075,8 @@
             <CONNECTION INSTANCE="axi_smc_2" PORT="aresetn"/>
             <CONNECTION INSTANCE="axis_data_fifo_in" PORT="s_axis_aresetn"/>
             <CONNECTION INSTANCE="axis_data_fifo_out" PORT="s_axis_aresetn"/>
-            <CONNECTION INSTANCE="conv2D_0" PORT="M_AXIS_ARESETN"/>
-            <CONNECTION INSTANCE="conv2D_0" PORT="S_AXIS_ARESETN"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="M_AXIS_ARESETN"/>
+            <CONNECTION INSTANCE="channel_add_0" PORT="S_AXIS_ARESETN"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_50M_peripheral_aresetn">

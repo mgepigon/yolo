@@ -18,7 +18,7 @@ preplace inst axis_data_fifo_in -pg 1 -lvl 4 -x 1210 -y 160 -defaultsOSRD
 preplace inst axis_data_fifo_out -pg 1 -lvl 6 -x 1790 -y 180 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 9 -x 2800 -y 150 -defaultsOSRD
 preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 190 -y 180 -defaultsOSRD
-preplace inst conv2D_0 -pg 1 -lvl 5 -x 1510 -y 160 -defaultsOSRD
+preplace inst channel_add_0 -pg 1 -lvl 5 -x 1510 -y 160 -defaultsOSRD
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 10 10 70 380 170 720 60 1070 60 1350 60 1670 60 1930 10 2270 10 2560 10 3050
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 10 20 80 360J 180 690J 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 NJ 20 3040
 preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 5 370 190 710J 40 1090 40 1360 40 1660
@@ -31,16 +31,16 @@ preplace netloc axi_smc_2_M00_AXI 1 2 5 670J 10 NJ 10 NJ 10 NJ 10 1920
 preplace netloc axi_smc_2_M01_AXI 1 2 1 700 80n
 preplace netloc axi_smc_M00_AXI 1 8 1 N 130
 preplace netloc axis_data_fifo_0_M_AXIS 1 6 1 1920 110n
-preplace netloc axis_data_fifo_M_AXIS 1 4 1 1340 120n
-preplace netloc conv2D_0_M_AXIS 1 5 1 N 160
 preplace netloc processing_system7_0_DDR 1 9 1 NJ 110
 preplace netloc processing_system7_0_FIXED_IO 1 9 1 NJ 130
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 9 390 160 680J 30 NJ 30 NJ 30 NJ 30 NJ 30 NJ 30 NJ 30 3030
+preplace netloc axis_data_fifo_in_M_AXIS 1 4 1 1340 120n
+preplace netloc channel_add_0_M_AXIS 1 5 1 N 160
 levelinfo -pg 1 -10 190 530 900 1210 1510 1790 2100 2420 2800 3070
 pagesize -pg 1 -db -bbox -sgen -10 0 3190 460
 ",
-   "Color Coded_ScaleFactor":"0.965714",
-   "Color Coded_TopLeft":"2426,-83",
+   "Color Coded_ScaleFactor":"0.297746",
+   "Color Coded_TopLeft":"-7,-598",
    "Default View_Layers":"/processing_system7_0_FCLK_CLK0:true|/rst_ps7_0_50M_interconnect_aresetn:true|/rst_ps7_0_50M_peripheral_aresetn:true|/processing_system7_0_FCLK_RESET0_N:true|",
    "Default View_ScaleFactor":"0.327232",
    "Default View_TopLeft":"0,-565",
