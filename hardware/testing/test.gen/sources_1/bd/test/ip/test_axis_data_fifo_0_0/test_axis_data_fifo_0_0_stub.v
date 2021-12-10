@@ -1,11 +1,11 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-// Date        : Sat Dec  4 00:39:21 2021
+// Date        : Sat Dec  4 00:39:20 2021
 // Host        : mrac-PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top test_axis_data_fifo_0_0 -prefix
-//               test_axis_data_fifo_0_0_ test_axis_data_fifo_0_0_stub.v
-// Design      : test_axis_data_fifo_0_0
+//               test_axis_data_fifo_0_0_ test_axis_data_fifo_1_0_stub.v
+// Design      : test_axis_data_fifo_1_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-3
 // --------------------------------------------------------------------------------
@@ -17,17 +17,17 @@
 module test_axis_data_fifo_0_0(s_axis_aresetn, s_axis_aclk, s_axis_tvalid, 
   s_axis_tready, s_axis_tdata, s_axis_tkeep, s_axis_tlast, m_axis_tvalid, m_axis_tready, 
   m_axis_tdata, m_axis_tkeep, m_axis_tlast)
-/* synthesis syn_black_box black_box_pad_pin="s_axis_aresetn,s_axis_aclk,s_axis_tvalid,s_axis_tready,s_axis_tdata[31:0],s_axis_tkeep[3:0],s_axis_tlast,m_axis_tvalid,m_axis_tready,m_axis_tdata[31:0],m_axis_tkeep[3:0],m_axis_tlast" */;
+/* synthesis syn_black_box black_box_pad_pin="s_axis_aresetn,s_axis_aclk,s_axis_tvalid,s_axis_tready,s_axis_tdata[15:0],s_axis_tkeep[1:0],s_axis_tlast,m_axis_tvalid,m_axis_tready,m_axis_tdata[15:0],m_axis_tkeep[1:0],m_axis_tlast" */;
   input s_axis_aresetn;
   input s_axis_aclk;
   input s_axis_tvalid;
   output s_axis_tready;
-  input [31:0]s_axis_tdata;
-  input [3:0]s_axis_tkeep;
+  input [15:0]s_axis_tdata;
+  input [1:0]s_axis_tkeep;
   input s_axis_tlast;
   output m_axis_tvalid;
   input m_axis_tready;
-  output [31:0]m_axis_tdata;
-  output [3:0]m_axis_tkeep;
+  output [15:0]m_axis_tdata;
+  output [1:0]m_axis_tkeep;
   output m_axis_tlast;
 endmodule

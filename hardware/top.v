@@ -46,7 +46,7 @@ module yolo(
     end
 
     //Instantiations
-    conv2D conv_2d(.M_AXIS_ACLK(M_AXIS_ACLK), 	//in
+    conv2D_f32 conv_2d(.M_AXIS_ACLK(M_AXIS_ACLK), 	//in
 			  .M_AXIS_ARESETN(conv2d_in[37]), 	//in
 			  .S_AXIS_ACLK(M_AXIS_ACLK), 		//in
 			  .S_AXIS_ARESETN(conv2d_in[37]), 	//in
@@ -81,6 +81,24 @@ module yolo(
 			  .S_AXIS_TLAST(convadd_in[34]), 			//in
 			  .S_AXIS_TVALID(convadd_in[33]) 			//in
    			);
+
+    maxpool mxpool(.M_AXIS_ACLK(M_AXIS_ACLK),   //in
+              .M_AXIS_ARESETN(maxpool_in[37]),   //in
+              .S_AXIS_ACLK(M_AXIS_ACLK),        //in
+              .S_AXIS_ARESETN(maxpool_in[37]),   //in
+
+              .M_AXIS_TVALID(maxpool_out[34]),   //out
+              .M_AXIS_TDATA(maxpool_out[31:0]),  //out
+              .M_AXIS_TKEEP(maxpool_out[36:35]), //out
+              .M_AXIS_TLAST(maxpool_out[34]),    //out
+              .M_AXIS_TREADY(maxpool_in[32]),    //in
+
+              .S_AXIS_TREADY(maxpool_out[32]),   //out
+              .S_AXIS_TDATA(maxpool_in[31:0]),   //in
+              .S_AXIS_TKEEP(maxpool_in[36:35]),  //in
+              .S_AXIS_TLAST(maxpool_in[34]),     //in
+              .S_AXIS_TVALID(maxpool_in[33])     //in
+            );
 
     relu l_relu(.M_AXIS_ACLK(M_AXIS_ACLK), 			//in
 			  .M_AXIS_ARESETN(relu_in[37]), 		//in

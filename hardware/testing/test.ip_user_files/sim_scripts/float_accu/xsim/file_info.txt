@@ -1,0 +1,2 @@
+float_accu.v,verilog,xil_defaultlib,../../../../test.gen/sources_1/ip/float_accu/sim/float_accu.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

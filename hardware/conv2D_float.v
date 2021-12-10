@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module conv2D(
+module conv2D_f32(
     // clock and reset ports - since both AXI buses are on the same clock in the block diagram, we only need one of each
     input wire  M_AXIS_ACLK,
     input wire  M_AXIS_ARESETN,
@@ -21,6 +21,41 @@ module conv2D(
     input wire  S_AXIS_TLAST, // Indicates boundary of last packet
     input wire  S_AXIS_TVALID // Data is in valid
     );
+    
+    // // // outputs
+    // wire [15:0] products1,products2,products3,products4,products5,products6,products7,products8,products9;
+    // assign products1 = products[0][0];
+    // assign products2 = products[0][1];
+    // assign products3 = products[0][2];
+    // assign products4 = products[1][0];
+    // assign products5 = products[1][1];
+    // assign products6 = products[1][2];
+    // assign products7 = products[2][0];
+    // assign products8 = products[2][1];
+    // assign products9 = products[2][2];
+
+    // wire [15:0] filter1,filter2,filter3,filter4,filter5,filter6,filter7,filter8,filter9;
+    // assign filter1 = filter[0][0];
+    // assign filter2 = filter[0][1];
+    // assign filter3 = filter[0][2];
+    // assign filter4 = filter[1][0];
+    // assign filter5 = filter[1][1];
+    // assign filter6 = filter[1][2];
+    // assign filter7 = filter[2][0];
+    // assign filter8 = filter[2][1];
+    // assign filter9 = filter[2][2];
+
+    // wire [15:0] data1,data2,data3,data4,data5,data6,data7,data8,data9;
+    // assign data1 = data[0][0];
+    // assign data2 = data[0][1];
+    // assign data3 = data[0][2];
+    // assign data4 = data[1][0];
+    // assign data5 = data[1][1];
+    // assign data6 = data[1][2];
+    // assign data7 = data[2][0];
+    // assign data8 = data[2][1];
+    // assign data9 = data[2][2];
+
 
     //==========================================================================================================
     //Combinatorial state interpretation rules
@@ -102,6 +137,7 @@ module conv2D(
         if (new_data) begin 
             data_count <= data_count+1;
             data[0][0] <= S_AXIS_TDATA;
+
             if (col_count != 449) col_count <= col_count + 1;
             else if (col_count == 449) col_count <= 0;
         end
@@ -134,7 +170,13 @@ module conv2D(
     end
     endgenerate
     
-    //===========================================================================================================
+    //============================================================================================================
+    //systolic array math: 256 multipliers, and 255 adders in a binary tree
+    // reg [31:0] products[0:2][0:2];
+    // reg [31:0] sumL1[0:4];
+    // reg [31:0] sumL2[0:3];
+    // reg [31:0] sumL3[0:1]; 
+    // reg [31:0] sumL4;
 
     wire [31:0] prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9;
     wire [31:0] sumL1_1, sumL1_2, sumL1_3, sumL1_4, sumL1_5;
@@ -145,9 +187,6 @@ module conv2D(
 
     wire L1a1_valid, L1a2_valid, L1a3_valid, L1a4_valid, L1a5_valid; 
 
-    // assign M_AXIS_TDATA = products[0][0] + products[0][1] + products[0][2] +
-    //                         products[1][0] + products[1][1] + products[1][2] +
-    //                             products[2][0] + products[2][1] + products[2][2];
     assign M_AXIS_TDATA = sumL4_1;
 
     //L1 Addition
@@ -282,6 +321,9 @@ module conv2D(
     );
 
     //Final addition
+
+    wire final_valid;
+
     float_add L4_add(
         .aclk(S_AXIS_ACLK),                                  // input wire aclk
         .s_axis_a_tvalid(L3a1_valid),            // input wire s_axis_a_tvalid
@@ -290,7 +332,7 @@ module conv2D(
         .s_axis_b_tvalid(L3a2_valid),            // input wire s_axis_b_tvalid
         .s_axis_b_tready(),            // output wire s_axis_b_tready
         .s_axis_b_tdata(sumL3_2),              // input wire [31 : 0] s_axis_b_tdata
-        .m_axis_result_tvalid(),  // output wire m_axis_result_tvalid
+        .m_axis_result_tvalid(final_valid),  // output wire m_axis_result_tvalid
         .m_axis_result_tready(1),  // input wire m_axis_result_tready
         .m_axis_result_tdata(sumL4_1)    // output wire [31 : 0] m_axis_result_tdata
     );
@@ -429,7 +471,7 @@ module conv2D(
     always @(posedge S_AXIS_ACLK) begin
         if (state == 0 && RX_data) state <= 1; //start loading to filter array after being in idle state
         if (state == 1 && RX_last) state <= 2; //when done loading to filter array, move to processing state
-        // 2 rows * (448 image width + 2 width padding) + 3 pixels seen on third row + 1 product delay + 4 addition delay, Note: 0 indexing
+        // 2 rows * (448 image width + 2 width padding) + 3 pixels seen on third row + 1 product delay, Note: 0 indexing
         // if (state == 2 && data_count == 903 && RX_data) state <= 3; //once first data conv has propegated through arithmetic, move to send&receive state
         if (state == 2 && data_count == 907 && RX_data) state <= 3; //once first data conv has propegated through arithmetic, move to send&receive state
         if (state == 3 && RX_last) state <= 4; //once all data has been received, move to send-only state

@@ -1,0 +1,2 @@
+float_max.v,verilog,xil_defaultlib,../../../../test.gen/sources_1/ip/float_max/sim/float_max.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

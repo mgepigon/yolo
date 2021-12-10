@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# channel_add
+# conv2D_int16
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -183,7 +183,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.c_include_s2mm {0} \
    CONFIG.c_include_sg {0} \
-   CONFIG.c_m_axis_mm2s_tdata_width {32} \
+   CONFIG.c_m_axis_mm2s_tdata_width {16} \
    CONFIG.c_sg_include_stscntrl_strm {0} \
    CONFIG.c_sg_length_width {26} \
  ] $axi_dma_from_ps_to_pl
@@ -211,7 +211,7 @@ proc create_root_design { parentCell } {
   set axis_data_fifo_in [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_data_fifo:2.0 axis_data_fifo_in ]
   set_property -dict [ list \
    CONFIG.FIFO_DEPTH {512} \
-   CONFIG.TDATA_NUM_BYTES {4} \
+   CONFIG.TDATA_NUM_BYTES {2} \
  ] $axis_data_fifo_in
 
   # Create instance: axis_data_fifo_out, and set properties
@@ -220,13 +220,13 @@ proc create_root_design { parentCell } {
    CONFIG.FIFO_DEPTH {512} \
  ] $axis_data_fifo_out
 
-  # Create instance: channel_add_0, and set properties
-  set block_name channel_add
-  set block_cell_name channel_add_0
-  if { [catch {set channel_add_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: conv2D_int16_0, and set properties
+  set block_name conv2D_int16
+  set block_cell_name conv2D_int16_0
+  if { [catch {set conv2D_int16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $channel_add_0 eq "" } {
+   } elseif { $conv2D_int16_0 eq "" } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -318,16 +318,16 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_smc_2_M01_AXI [get_bd_intf_pins axi_dma_from_ps_to_pl/S_AXI_LITE] [get_bd_intf_pins axi_smc_2/M01_AXI]
   connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net axis_data_fifo_0_M_AXIS [get_bd_intf_pins axi_dma_from_pl_to_ps/S_AXIS_S2MM] [get_bd_intf_pins axis_data_fifo_out/M_AXIS]
-  connect_bd_intf_net -intf_net axis_data_fifo_in_M_AXIS [get_bd_intf_pins axis_data_fifo_in/M_AXIS] [get_bd_intf_pins channel_add_0/S_AXIS]
-  connect_bd_intf_net -intf_net channel_add_0_M_AXIS [get_bd_intf_pins axis_data_fifo_out/S_AXIS] [get_bd_intf_pins channel_add_0/M_AXIS]
+  connect_bd_intf_net -intf_net axis_data_fifo_in_M_AXIS [get_bd_intf_pins axis_data_fifo_in/M_AXIS] [get_bd_intf_pins conv2D_int16_0/S_AXIS]
+  connect_bd_intf_net -intf_net conv2D_int16_0_M_AXIS [get_bd_intf_pins axis_data_fifo_out/S_AXIS] [get_bd_intf_pins conv2D_int16_0/M_AXIS]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins axi_smc_2/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
 
   # Create port connections
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_dma_from_pl_to_ps/m_axi_s2mm_aclk] [get_bd_pins axi_dma_from_pl_to_ps/s_axi_lite_aclk] [get_bd_pins axi_dma_from_ps_to_pl/m_axi_mm2s_aclk] [get_bd_pins axi_dma_from_ps_to_pl/s_axi_lite_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_smc_1/aclk] [get_bd_pins axi_smc_2/aclk] [get_bd_pins axis_data_fifo_in/s_axis_aclk] [get_bd_pins axis_data_fifo_out/s_axis_aclk] [get_bd_pins channel_add_0/M_AXIS_ACLK] [get_bd_pins channel_add_0/S_AXIS_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_dma_from_pl_to_ps/m_axi_s2mm_aclk] [get_bd_pins axi_dma_from_pl_to_ps/s_axi_lite_aclk] [get_bd_pins axi_dma_from_ps_to_pl/m_axi_mm2s_aclk] [get_bd_pins axi_dma_from_ps_to_pl/s_axi_lite_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_smc_1/aclk] [get_bd_pins axi_smc_2/aclk] [get_bd_pins axis_data_fifo_in/s_axis_aclk] [get_bd_pins axis_data_fifo_out/s_axis_aclk] [get_bd_pins conv2D_int16_0/M_AXIS_ACLK] [get_bd_pins conv2D_int16_0/S_AXIS_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins axi_smc_2/aresetn] [get_bd_pins axis_data_fifo_in/s_axis_aresetn] [get_bd_pins axis_data_fifo_out/s_axis_aresetn] [get_bd_pins channel_add_0/M_AXIS_ARESETN] [get_bd_pins channel_add_0/S_AXIS_ARESETN] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]
+  connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins axi_smc_2/aresetn] [get_bd_pins axis_data_fifo_in/s_axis_aresetn] [get_bd_pins axis_data_fifo_out/s_axis_aresetn] [get_bd_pins conv2D_int16_0/M_AXIS_ARESETN] [get_bd_pins conv2D_int16_0/S_AXIS_ARESETN] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins axi_dma_from_pl_to_ps/axi_resetn] [get_bd_pins axi_dma_from_ps_to_pl/axi_resetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins axi_smc_1/aresetn] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
 
   # Create address segments
